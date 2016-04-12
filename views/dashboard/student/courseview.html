@@ -1,0 +1,80 @@
+<div>
+	<div class="jumbotron">
+		<div class="container">
+			<div > 
+				<div class="row">
+					<div class="col-lg-12">
+						 <div id="coursestudents" >
+                            <a ui-sref="studenthome"><i class="fa fa-arrow-circle-left  fa-2x"></i></a>
+
+
+                            <div class="container" ng-controller="courseViewCtrl">
+                                <div class="row">
+                                    <div class="s12 col">
+                                        <h3>{{subject_name}} {{course}}</h3>
+                                        <h5>Lista de estudiantes</h5>
+                                        <br>
+                                        <ul>
+                                            <xx ng-repeat="state in courses">
+                                              <li card-view 
+                                                  card-id="state.card" 
+                                                  ng-if="state.column == 'backlog'" 
+                                                  ng-include="cardview.html">
+                                               </li>
+                                             </xx>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                <div id="modalDetails" class="modal bottom-sheet">
+                                    <div class="modal-content">
+                                        <div class="row">
+                                            <div class="l10 col">
+                                                <h3>{{user.names}}{{user.lastnames}}</h3>
+                                                <hr>
+                                                <label>ID</label> {{user.id}}                                                 <br/>
+                                                <label>Email</label> {{user.email}}                                                 <br/>
+                                                <label>Programa</label> {{user.program}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="modalStatistics" class="modal ">
+                                    <div class="modal-content">
+                                                    <h3>Estadisticas del curso</h3>                                                    
+                                                    <div id="container"></div>
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                                    </div>
+                                </div>
+                                <div id="modalStatisticsstudent" class="modal ">
+                                    <div class="modal-content">
+                                                    <h3>Estadisticas del curso</h3>                                                    
+                                                    <div ng-init="load()"id="container"></div>
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                                    </div>
+                                </div>
+
+                                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                                <a class="btn-floating btn-large red">
+                                  <i class="fa fa-bars"></i>
+                                </a>
+                                <ul>
+                                  <li><a href="" ng-click="modalStatistics()" class="modal-trigger btn-floating waves-effect waves-light red"><i class="fa fa-line-chart"></i></a></li>
+                                  <li><a class="btn-floating waves-effect waves-light green"><i class="fa fa-line-chart"></i></a></li>
+                                  <li><a class="btn-floating waves-effect waves-light blue"><i class="fa fa-line-chart"></i></a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
