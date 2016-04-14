@@ -1,4 +1,4 @@
-angular.module('yapp')
+angular.module('raoweb')
   .controller('courseStatisticsCtlr', function($scope, $location,$http,passDataService,$stateParams) {
 	$scope.course = $stateParams.course;
 	console.log("atangana",$scope.course);

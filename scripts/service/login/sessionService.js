@@ -1,6 +1,6 @@
 'use strict';
 
-yapp.factory('sessionService', ['$http', function($http){
+raoweb.factory('sessionService', ['$http', function($http){
 	return{
 		set:function(key,value){
 			return sessionStorage.setItem(key,value);

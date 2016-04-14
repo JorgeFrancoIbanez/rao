@@ -1,5 +1,5 @@
 'use strict';
-yapp.factory('loginService', function($http, $location,  sessionService){
+raoweb.factory('loginService', function($http, $location,  sessionService){
 	var sesionName; //save key value for sessions
 	var sesionToken; //save key value for sessions
 	var sesionType; //save key value for sessions

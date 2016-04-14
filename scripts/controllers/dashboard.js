@@ -1,5 +1,5 @@
 'use strict';
-angular.module('yapp')
+angular.module('raoweb')
   .controller('DashboardCtrl', function($scope, $state) {
 
 	$scope.id = sessionStorage.getItem('user');

@@ -7,7 +7,7 @@
 //    return r;
 //};*/
 //
-//angular.module('yapp')
+//angular.module('raoweb')
 //  .controller('studentsByCourseCtrl', function($scope,$element, $location,$http,passDataService, $stateParams) {
 //	$scope.course = $stateParams.course;
 //    console.log($scope.course);
@@ -152,7 +152,7 @@
 
 
 
-angular.module('yapp')
+angular.module('raoweb')
   .controller('studentsByCourseCtrl', function($scope,$element, $location,$http,$stateParams) {
     $scope.course = $stateParams.course;
     console.log($scope.course);

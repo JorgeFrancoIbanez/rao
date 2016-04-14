@@ -1,5 +1,5 @@
 'use strict';	
-yapp
+raoweb
 .controller('courseCtrl', ['$scope', '$location','$http','$rootScope', 'sessionService', 'courselistService' ,function($scope, $location, $http,$rootScope,sessionService,courselistService) {
     if(sessionStorage.length===0){
         console.log("asdasdas");

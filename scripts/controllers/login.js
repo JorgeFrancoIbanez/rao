@@ -1,5 +1,5 @@
 'use strict';
-angular.module('yapp')
+angular.module('raoweb')
   .controller('LoginCtrl', ['$scope', 'loginService',function($scope,loginService, $location) {
 
 		$scope.msgtxt='';

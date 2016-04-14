@@ -1,4 +1,4 @@
-angular.module('yapp').
+angular.module('raoweb').
 controller('courseViewCtrl', function ($scope, $location, $http, $stateParams,courseviewService,sessionService) {
 	$scope.course = $stateParams.course;
     if (sessionService.get('type') == 'teacher'){
@@ -264,7 +264,6 @@ controller('courseViewCtrl', function ($scope, $location, $http, $stateParams,co
 					}); 
                    
 				});            
-			}); 
         }
     
 });

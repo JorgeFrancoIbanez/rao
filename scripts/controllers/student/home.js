@@ -1,5 +1,5 @@
 'use strict';
-angular.module('yapp')
+angular.module('raoweb')
 .controller('studentCourseCtrl', ['$scope', '$location','$http','passDataService','$rootScope', 'sessionService' ,function($scope, $location, $http, passDataService,$rootScope,sessionService) {
     
     if(sessionStorage.getItem('user')!= null){

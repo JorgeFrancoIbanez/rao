@@ -1,5 +1,5 @@
 'use strict';
-angular.module('yapp')
+angular.module('raoweb')
   .controller('teacherCtrl', ['$scope','loginService','$http', function($scope,loginService, $http, $location){
   	console.log(sessionStorage.getItem('user'));
 	$http({

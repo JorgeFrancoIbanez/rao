@@ -1,4 +1,4 @@
-yapp.factory('courselistService',function($http,$rootScope){
+raoweb.factory('courselistService',function($http,$rootScope){
     return{
         teachercourses:function(){
             $http({

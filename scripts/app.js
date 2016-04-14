@@ -2,20 +2,20 @@
 
 /**
  * @ngdoc overview
- * @name yapp
+ * @name raoweb
  * @description
- * # yapp
+ * # raoweb
  *
  * Main module of the application.
  */
-var yapp = angular
-	.module('yapp', [
+var raoweb = angular
+	.module('raoweb', [
     'ui.router',
     'ngAnimate'
   ]);
 
 
-yapp.config(function ($stateProvider, $urlRouterProvider) {
+raoweb.config(function ($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.when('/teacher/home', '/dashboard/teacher/home');
 	$urlRouterProvider.when('/student/home', '/dashboard/student/home');
@@ -126,7 +126,7 @@ yapp.config(function ($stateProvider, $urlRouterProvider) {
 
 
 
-yapp.controller('logoutctrl', ['$scope', 'loginService', function ($scope, loginService) {
+raoweb.controller('logoutctrl', ['$scope', 'loginService', function ($scope, loginService) {
 	$scope.txt = 'Page Home';
 
 	loginService.logout();
