@@ -1,4 +1,4 @@
-raoweb.factory('studentlistService',function($http,$rootScope){
+raoweb.factory('studentlistService',function($http,$rootScope,$location){
     return{
         attendancelist:function(course){
     
@@ -62,6 +62,9 @@ raoweb.factory('studentlistService',function($http,$rootScope){
                         url: 'http://raoapi.utbvirtual.edu.co:8082/attendance?username=T00010915&token=GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS',
                         data: sendPost
                     });
+                var msgtxt='Asistencia realizada';
+				Materialize.toast(msgtxt, 5000,'rounded');
+                $location.path("/teacher/home");
             };
         }
     }
