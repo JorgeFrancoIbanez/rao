@@ -115,6 +115,16 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: 'views/login.html',
 			controller: 'logoutctrl'
 		})
+		.state('errornoteacher', {
+			url: '/reports',
+			parent: 'dashboard',
+			templateUrl: 'views/dashboard/reports.html'
+		})
+		.state('errornostudent', {
+			url: '/reports',
+			parent: 'dashboard',
+			templateUrl: 'views/dashboard/reports.html'
+		})
 		.state('reports', {
 			url: '/reports',
 			parent: 'dashboard',

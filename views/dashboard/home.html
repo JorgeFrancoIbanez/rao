@@ -10,7 +10,7 @@
 						<div ng-controller="courseCtrl"> 
 							<div id="teachercourses" >
 								<h2>Cursos:</h2>
-								<div ng-repeat="c in courses" >
+								<div ng-repeat="c in courses | filter:query | orderBy:'c.subject_name'" >
 									<div class="row">
 										<div class="col s8">
 											<div class="collection">
@@ -20,12 +20,17 @@
 															<div id="nrc">{{c.nrc}}</div>	
 													</a>
 												</div>
+                                                <a class="btn-floating waves-effect waves-light green" ui-sref="dashboard.studentlist({course : c.nrc})"><i class="fa fa-check"></i></a>
 											</div>
+                                            
 										</div>
 										<div class="col s4 ">
-											<a ui-sref="dashboard.studentlist({course : c.nrc})"><span class="btn-large">Tomar Asistencia</span></a><div><span></span></div>
+											<div><span></span></div>
 										</div>
-									</div>
+									
+
+                                    </div>
+                                    
 								</div>
 							</div>
 						</div>
