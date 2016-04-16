@@ -5,12 +5,12 @@ raoweb
         console.log("asdasdas");
         $location.path('/login');
     }
-    if (sessionService.get('type') == 'teacher'){
-        courselistService.teachercourses();
-        console.log($rootScope);
-    }
-    else{
-        courselistService.studentcourses();
-        console.log($rootScope);
+    if (sessionService.get('type') == 'teacher'){ 
+        courselistService.teachercourses(); 
+        $location.path("/dashboard/teacher/home"); 
+    } 
+    else{ 
+        courselistService.studentcourses(); 
+        $location.path("/dashboard/student/home"); 
     }
 }]);

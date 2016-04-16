@@ -28,9 +28,9 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                 //params: {username: "T00010915", token:"GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS"}
                 }).success(function (response) {
                     $rootScope.courses = response;
-                    $rootScope.nrc = $rootScope.json.nrc;
-                    $rootScope.subject = $rootScope.json.subject;
-                    $rootScope.students = $rootScope.json.students;
+                    $rootScope.nrc = $rootScope.courses.nrc;
+                    $rootScope.subject = $rootScope.courses.subject;
+                    $rootScope.students = $rootScope.courses.students;
             }).catch(function(msg){console.log("mensaje", msg)});
         },
         getattendance:function(course){

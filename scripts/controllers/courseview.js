@@ -4,14 +4,15 @@ controller('courseViewCtrl', function ($scope, $location, $http, $stateParams,co
 
         if (sessionService.get('type') == 'teacher'){
             courseviewService.teachercourseview($scope.course);
+            $location.path("/dashboard/teacher/courseview").search({course :$scope.course}); 
         }
         else{
             courseviewService.studentcourseview($scope.course);    
+            $location.path("/dashboard/student/courseview").search({course :$scope.course}); 
         }
 
-
+     
         $scope.modalDetails = function(user){
-            $scope.user = user;
             $('#modalDetails').openModal();
         };
 
