@@ -1,5 +1,5 @@
 angular.module('raoweb').
-controller('courseViewCtrl', function ($scope, $location, $http, $stateParams,courseviewService,sessionService) {
+controller('courseViewCtrl', function ($scope, $location,   $stateParams,courseviewService,sessionService) {
         $scope.course = $stateParams.course;
 
         if (sessionService.get('type') == 'teacher'){

@@ -19,7 +19,11 @@ raoweb.factory('loginService', function($http, $location,  sessionService){
 					sesionName = data.username;
 					sesionToken  = uid;
 					sesionType  = uty;
-					scope.msgtxt='Datos del profesor correctos';
+                    if(uty === "teacher")
+					   scope.msgtxt='Datos del profesor correctos';
+                    else
+					   scope.msgtxt='Datos del estudiante correctos';
+                    
 					Materialize.toast(scope.msgtxt, 5000,'rounded');
                     if (sessionStorage.getItem('type') == 'student'){   
                         console.log("1");

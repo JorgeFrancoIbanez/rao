@@ -2,15 +2,13 @@
 	<h2>Student profile</h2>
 	<div class="jumbotron">
 		<div class="container">
-			<div ng-controller="studentCtrl"> 
+			<div ng-controller="studentProfile"> 
                 <div id="teacher" >
                     <div style="float: left;" class="pull-right container">
-                        <ul>
-                            <li><label>Codigo: </label>{{id}}</li>
-                            <li><label>Nombres: </label>{{names}}</li>
-                            <li><label>Apellidos: </label>{{lastnames}}</li>
-                            <li><label>E-mail: </label>{{email}}</li>
-                        </ul>
+                        <img src="images/user.jpg" >
+                            {{uid}}
+                            {{names}}
+                            {{lastnames}}
                     </div>
                 </div>
             </div>

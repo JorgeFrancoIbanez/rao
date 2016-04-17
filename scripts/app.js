@@ -20,8 +20,6 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.when('/teacher/home', '/dashboard/teacher/home');
 	$urlRouterProvider.when('/student/home', '/dashboard/student/home');
 	$urlRouterProvider.when('/logout', '/login');
-    console.log("nado");
-    $urlRouterProvider.otherwise('/login');
 
 	$stateProvider
 		.state('base', {
@@ -63,6 +61,11 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 
 			}
 		})
+		.state('dashboard.studentprofile', {
+			url: '/student/profile?user',
+            templateUrl: 'views/dashboard/student/profile.html',
+            controller: 'studentProfile'
+		})
 		/*.state('dashboard.courseview.coursestatistics', {
 			url: '/coursestatistics?course',
 			templateUrl: 'views/dashboard/courseStatistics.html',
@@ -96,12 +99,6 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
             parent: 'dashboard',
             templateUrl: 'views/dashboard/student/courseview.html',
             controller: 'courseViewCtrl'
-		})
-		.state('studentprofile', {
-			url: '/student/profile',
-			parent: 'dashboard',
-			templateUrl: 'views/dashboard/student/profile.html',
-			controller: 'studentCtrl'
 		})
 		.state('studentstudentview', {
 			url: '/student/studentview',
