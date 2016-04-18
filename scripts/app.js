@@ -19,7 +19,10 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.when('/teacher/home', '/dashboard/teacher/home');
 	$urlRouterProvider.when('/student/home', '/dashboard/student/home');
+	$urlRouterProvider.when('/dashboard/teacher/profile?user', '/dashboard/teacher/profile');
 	$urlRouterProvider.when('/logout', '/login');
+        $urlRouterProvider.otherwise('/login');
+
 
 	$stateProvider
 		.state('base', {
@@ -62,7 +65,7 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 			}
 		})
 		.state('dashboard.studentprofile', {
-			url: '/student/profile?user',
+			url: '/teacher/profile/:user/:course',
             templateUrl: 'views/dashboard/student/profile.html',
             controller: 'studentProfile'
 		})
@@ -78,7 +81,7 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 			controller: 'courseCtrl'
 		})
 		.state('profile', {
-			url: '/teacher/profile',
+			url: '/teacher/profiles',
 			parent: 'dashboard',
 			templateUrl: 'views/dashboard/profile.html',
 			controller: 'teacherCtrl'

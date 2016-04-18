@@ -5,10 +5,27 @@
 			<div ng-controller="studentProfile"> 
                 <div id="teacher" >
                     <div style="float: left;" class="pull-right container">
-                        <img src="images/user.jpg" >
-                            {{uid}}
-                            {{names}}
-                            {{lastnames}}
+                        <div class="row">
+                            <div class="col s12 m7">
+                                <div class="card">
+                                    <div class="card-image">
+                        
+                                        <img src="images/user.jpg" >
+                                        <span class="card-title"> {{names}}{{lastnames}}</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p> {{uid}}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <p>Student Statistics of this course {{course}}</p>
+                                        <div>came: {{came}}</div>
+                                        <div>notcame    : {{notcame}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                           
                     </div>
                 </div>
             </div>

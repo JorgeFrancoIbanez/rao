@@ -49,9 +49,12 @@ raoweb.factory('loginService', function($http, $location,  sessionService){
 			$location.path('/login');
 		},
 		islogged:function(){
-			var $checkSessionServer=$http.post('http://raoapi.utbvirtual.edu.co:8082/token');
+			var $checkSessionServer=$http.post('http://raoapi.utbvirtual.edu.co:8082/token',sessionService.get('user')).then(function(response){
+                console.log("isloged = ",$checkSessionServer);			
+                return true;
+
+            });
 //			var $checkSessionServer=$http.post('https://utbweb.co/token');
-			return $checkSessionServer;
 		
 		/*	if(sessionService.get('user')) return true;
 			else return false;

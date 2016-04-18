@@ -12,7 +12,12 @@ controller('courseViewCtrl', function ($scope, $location,   $stateParams,coursev
         }
 
      
+        $scope.modalClose = function(){
+        };
+
+     
         $scope.modalDetails = function(user){
+            $scope.userid = user;
             $('#modalDetails').openModal();
         };
 
