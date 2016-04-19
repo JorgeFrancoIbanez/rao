@@ -18,12 +18,9 @@
                                                 <input ng-click="toggleSelection(s.id,s.names, $index)" class = "switch"    type="checkbox" id="students{{$index+1}}"  >
 
                                                 <label FOR="students{{$index+1}}">
+                                                    {{s.names}} {{s.lastnames}}
 
-                                                        {{s.names}} {{s.lastnames}}
-
-                                                    <div>
-                                                        {{s.id}}
-                                                    </div>
+                                                    <div>{{s.id}}</div>
                                                 </label>
 
                                             </p>

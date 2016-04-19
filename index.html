@@ -1,33 +1,31 @@
 <!doctype html>
 <html >
-  <head>
-    <meta charset="utf-8">
-    <title>RAOWEB Tittle</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-	<!--AWESOME FONT-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<!-- MATERIALIZE-->
-	    <link href="https://cdn.rawgit.com/Dogfalo/materialize/master/dist/css/materialize.css" rel="stylesheet">
-    
-  </head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>RAOweb</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
 	
   <body ng-app="raoweb">
-    
     <!--application content -->
-    <div class="">
-      <div ui-view></div>
-    </div>
+    <div ui-view></div>
 
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src= "https://cdn.rawgit.com/Dogfalo/materialize/master/dist/js/materialize.js"></script>
+    
     <!--module loads-->
     <script src="scripts/modules/angular/angular.js"></script>
     <script src="scripts/modules/angular-mocks/angular-mocks.js"></script>
     <script src="scripts/modules/ui-router/release/angular-ui-router.js"></script>
     <script src="scripts/modules/angular-animate/angular-animate.js"></script>
+    
     <!--angular application-->
     <script src="scripts/app.js"></script>
     <script src="scripts/service/login/loginService.js"></script>

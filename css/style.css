@@ -1,0 +1,149 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+*/
+
+@font-face { 
+    font-family: 'champagne Limousines'; 
+    src: url('../font/champagne_limousines/Champagne&Limousines.ttf'); 
+}
+
+@font-face { 
+    font-family: 'Honey'; 
+    src: url('../font/honey_script/HoneyScript-Light.ttf'); 
+}
+
+body{
+    background: url("../img/fondo.png") no-repeat;
+    background-size: 1430px 750px;
+    display: block;
+    font-weight: lighter;
+} 
+
+#logo{
+    width: 45%;
+    margin: 0;
+}
+
+.card-panel {
+    background-color: #f58100 !important;
+    background-image: url("../img/textura.png");
+    background-size: cover;
+}
+
+/******Form******/
+.input-field{
+    font-family: 'champagne Limousines';
+}
+/* label color */
+.input-field label {
+    color: white;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label {
+    color: white;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus, .input-field input[type=password]:focus {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
+
+.input-field input[type=text], .input-field input[type=password]{
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+    color: white;
+}
+
+.btn{
+    font-family: 'champagne Limousines';
+    text-transform: none;
+}
+/*****Form*******/
+
+h1{
+    text-shadow: 2px 2px #ee4210;
+    font-family: 'Honey';
+    margin-bottom: 0;
+}
+
+h5{
+    margin-top: 0;
+    font-family: 'champagne Limousines';
+}
+
+@media (max-width:459px) {
+    .card-panel{
+        width: 92%;
+        margin: 27% 4%;
+    }
+    
+    .input-field label, .input-field input[type=text], .input-field input[type=password]{
+        font-size: 1.3em;
+    } 
+    
+    .btn{
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 460px) and (max-width : 767px){
+    .card-panel{
+        width: 90%;
+        margin: 25% 5%;
+    }
+    
+    h1{
+        font-size: 5em;
+    }
+    
+    .input-field label, .input-field input[type=text], .input-field input[type=password]{
+        font-size: 1.3em;
+    } 
+    
+    .btn{
+        font-size: 1.3em;
+    }
+}    
+
+@media (min-width :768px) and (max-width : 992px) {
+    .card-panel{
+        width: 80%;
+        margin: 25% 10%;
+    }
+    
+    h1{
+        font-size: 5em;
+    }
+    
+    .input-field label, .input-field input[type=text], .input-field input[type=password]{
+        font-size: 1.2em;
+    } 
+    
+    .btn{
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width:993px) {
+    .card-panel{
+        width: 60%;
+        margin: 12% 20%;
+    }
+    
+    h1{
+        font-size: 6em;
+    }
+    
+    .input-field label, .input-field input[type=text], .input-field input[type=password]{
+        font-size: 1.3em;
+    }  
+    
+    .btn{
+        font-size: 1.6em;
+    }
+}

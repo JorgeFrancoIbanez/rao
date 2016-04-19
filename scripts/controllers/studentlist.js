@@ -5,7 +5,7 @@ angular.module('raoweb')
         console.log("asdasdas");
         $location.path('/login');
     }
-    if (sessionService.get('type') == 'teacher'){
+    if (sessionService.get('type') === 'teacher'){
         //metodos para accedes a los factory de cada funcion:
         
         //Get data
