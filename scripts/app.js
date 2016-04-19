@@ -73,7 +73,7 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 //			parent: 'dashboard',
 //			templateUrl: 'views/dashboard/profile.html',
 //			controller: 'teacherCtrl'
-//		})
+//		})s
 		/*.state('dashboard.courseview.coursestatistics', {
 			url: '/coursestatistics?course',
 			templateUrl: 'views/dashboard/courseStatistics.html',
