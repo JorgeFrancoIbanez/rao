@@ -35,12 +35,11 @@
                                     <div class="modal-content">
                                         <div class="row">
                                             <div class="l10">
-                                                <h3>{{userid.names}}{{userid.lastnames}}</h3>
+                                                <a ui-sref="dashboard.studentprofile({course:nrc,user:userid.id})" class="modal-close"><h3 >{{userid.names}}{{userid.lastnames}}</h3></a>
                                                 <hr>
                                                 <label>ID</label> {{userid.id}}                                                 <br/>
                                                 <label>Email</label> {{userid.email}}                                                 <br/>
                                                 <label>Programa</label> {{userid.program}}
-                                                <i ui-sref="dashboard.studentprofile({course:nrc,user:userid.id})" class="modal-close fa fa-user" aria-hidden="true"></i>   
                                             </div>
                                         </div>
                                     </div>

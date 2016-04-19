@@ -8,12 +8,12 @@ raoweb.factory('profile',function($http,$rootScope){
                 data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
                 }).success(function (response) {
                     console.log(response)   
-                    $rootScope.profile = response;
-                    $rootScope.uid = $rootScope.profile.id;
-                    $rootScope.names = $rootScope.profile.names;
-                    $rootScope.lastnames = $rootScope.profile.lastnames;
-                    $rootScope.program = $rootScope.profile.program;
-                    $rootScope.email = $rootScope.profile.email;
+                    $rootScope.studentprofile = response;
+                    $rootScope.uid = $rootScope.studentprofile.id;
+                    $rootScope.names = $rootScope.studentprofile.names;
+                    $rootScope.lastnames = $rootScope.studentprofile.lastnames;
+                    $rootScope.program = $rootScope.studentprofile.program;
+                    $rootScope.email = $rootScope.studentprofile.email;
             })
         },
         studentstats:function(user, course){
@@ -28,6 +28,28 @@ raoweb.factory('profile',function($http,$rootScope){
                     $rootScope.came = $rootScope.att[0].value;
                     $rootScope.notcame = $rootScope.att[1].value;                
             })
+        },
+        teacherprofile:function(){
+
+            $http({
+                url: "http://raoapi.utbvirtual.edu.co:8082/teacher/"+sessionStorage.getItem('user'), 
+                //    url: "https://utbweb.co/teacher/"+sessionStorage.getItem('user'), 
+                method: "GET",
+                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
+                }).success(function (response) {
+                 // console.log('epaaaaa');
+
+                  console.log(response);
+                  $rootScope.teacherprofile = response;
+                  $rootScope.id = $rootScope.teacherprofile.id;
+                  $rootScope.names = $rootScope.teacherprofile.names;
+                  $rootScope.lastnames = $rootScope.teacherprofile.lastnames;
+                  $rootScope.type = $rootScope.teacherprofile.type;
+                  $rootScope.department = $rootScope.teacherprofile.department;
+                  $rootScope.school = $rootScope.teacherprofile.school;
+                  $rootScope.email = $rootScope.teacherprofile.email;
+
+            });
         }
     }
 })

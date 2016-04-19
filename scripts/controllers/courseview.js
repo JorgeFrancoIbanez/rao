@@ -1,7 +1,10 @@
 angular.module('raoweb').
 controller('courseViewCtrl', function ($scope, $location,   $stateParams,courseviewService,sessionService) {
         $scope.course = $stateParams.course;
-
+        if(sessionStorage.length===0){
+            console.log("asdasdas");
+            $location.path('/login');
+        }
         if (sessionService.get('type') == 'teacher'){
             courseviewService.teachercourseview($scope.course);
             $location.path("/dashboard/teacher/courseview").search({course :$scope.course}); 
