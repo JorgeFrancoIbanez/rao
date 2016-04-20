@@ -28,6 +28,7 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                 //params: {username: "T00010915", token:"GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS"}
                 }).success(function (response) {
                     $rootScope.courses = response;
+                 console.log($rootScope.courses)
                     $rootScope.nrc = $rootScope.courses.nrc;
                     $rootScope.subject = $rootScope.courses.subject;
                     $rootScope.students = $rootScope.courses.students;
@@ -40,7 +41,7 @@ raoweb.factory('courseviewService',function($http,$rootScope){
 
 
             $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/attendance?", 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/attendance", 
                 method: "GET",
                 data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
             }).success(function (response) {
@@ -48,7 +49,6 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                 for (i = 0; i < response.length; i++){
                     $rootScope.students_names.push(response[i]["student_name"]+ " "+response[i]["student_lastname"]); //NOMBRE DEL ESTUDIANTE
                 }
-
                 for (i = 0 ; i < 5; i++){                
                     for( j = 0; j < response.length; j++){
                         switch(i){
@@ -160,6 +160,97 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                     }); 
                 }); 
             });            
+        },
+        studentstatistics:function(student,course){
+            $rootScope.array = new Array();   
+            $http({
+            url: "http://raoapi.utbvirtual.edu.co:8082/student/"+student+"/course/"+course+"/attendance", 
+            method: "GET",
+            data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
+            }).success(function (response) {
+                $rootScope.att = response.attendance;
+                                console.log("esta",response)   
+
+                $rootScope.come = $rootScope.att[0].value;
+                $rootScope.notcame = $rootScope.att[1].value;  
+                 for (i = 0; i < $rootScope.att.length; i++){
+                    $rootScope.array.push([$rootScope.att.key, $rootScope.att.value]);
+                } 
+
+                // draw chart 
+                $('#containerprofile').highcharts({ 
+                    chart: { 
+                        plotBackgroundColor: null, 
+                        plotBorderWidth: null, 
+                        plotShadow: false 
+                    }, 
+                    title: { 
+                        text: 'Attendances of '+student 
+                    }, 
+                    tooltip: {  
+                        backgroundColor: { 
+                                   linearGradient: [0, 0, 0, 60], 
+                                   stops: [ 
+                                       [0, '#FFFFFF'], 
+                                       [1, '#E0E0E0'] 
+                                   ] 
+                               }, 
+                               borderWidth: 1, 
+                               borderColor: '#AAA', 
+                           formatter: function() { 
+                               return '<strong>'+this.point.name + '</strong>' + '  ' + this.y + ' %'; 
+                           } 
+                    }, 
+                    plotOptions: { 
+                        pie:{                         
+                            showInLegend: true, 
+                            dataLabels: { 
+                                style: { 
+                                    color: 'black', 
+                                    fontSize:'12px', 
+                                    fontWeight: 'bold' 
+                                },      
+                                enabled: true, 
+                                formatter: function() { 
+                                    if (this.y !== 0) { 
+                                      return this.y+'%'; 
+                                    } else { 
+                                      return null; 
+                                    } 
+                                } 
+
+                            } 
+                        }, 
+                        series: { 
+                            point: { 
+                                events: { 
+                                    legendItemClick: function () { 
+                                        return false; // <== returning false will cancel the default action 
+                                    } 
+                                } 
+                            } 
+                        } 
+                    }, 
+                    credits: { 
+                        enabled: false 
+                    },     
+                    legend: { 
+                        itemMarginBottom: 15, 
+                        itemDistance: 10 
+                    }, 
+                    series: [{ 
+                        type: 'pie', 
+                        name: 'Attendance', 
+                        data: [{
+                            name: 'Came',
+                            y: $rootScope.come,
+                        }, {
+                            name: 'Not came',
+                            y: $rootScope.notcame,
+                        }]
+                    }] 
+                }); 
+            })          
         }
     }
 });

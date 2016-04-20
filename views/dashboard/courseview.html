@@ -7,9 +7,12 @@
 						 <div id="coursestudents" >
                             <a ui-sref="home"><i class="fa fa-arrow-circle-left  fa-2x"></i></a>
 
+ <div class="card">
 
+                                        <div class="card-content">
                             <div class="container" ng-controller="courseViewCtrl">
                                 <div class="row">
+                                    
                                     <div class="s12 col">
                                         <h3>{{subject}} {{nrc}}</h3>
                                         <h5>Lista de estudiantes</h5>
@@ -21,8 +24,8 @@
                                         
                                         <ul class="collection">
                                                 <li class="collection-item avatar animated fadeInUp" style="-webkit-animation-duration:{{$index * 300}}ms" ng-repeat="s in students | filter:query | orderBy:'s.name'">
-                                                    <div href="" ng-click="modalDetails(s)" class="modal-trigger title" >
-                                                        <a>
+                                                    <div  class="modal-trigger title" >
+                                                        <a ui-sref="dashboard.studentprofile({course:nrc,user:s.id})" class="modal-close">
                                                             <h4>{{s.names}} {{s.lastnames}}</h4>
                                                         </a>
                                                     </div>
@@ -67,6 +70,8 @@
                                 </ul>
                                 </div>
                             </div>
+                                </div>
+                             </div>
                         </div>
                     </div>
                 </div>

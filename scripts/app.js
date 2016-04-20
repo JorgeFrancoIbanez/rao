@@ -21,7 +21,7 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.when('/student/home', '/dashboard/student/home');
 	//$urlRouterProvider.when('/dashboard/teacher/studentprofile/:user/:course', '/dashboard/teacher/studentprofile');
 	$urlRouterProvider.when('/logout', '/login');
-
+    $urlRouterProvider.otherwise('/login');
 
 	$stateProvider
 		.state('base', {
@@ -42,15 +42,9 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 			controller: 'DashboardCtrl'
 		})
 		.state('dashboard.courseview', {
-			url: '/teacher/courseview?course',
-			views: {
-				'': {
-					templateUrl: 'views/dashboard/courseview.html',
-					controller: 'courseViewCtrl'
-				},
-				
-
-			}
+			url: '/teacher/courseview/:course',
+            templateUrl: 'views/dashboard/courseview.html',
+            controller: 'courseViewCtrl'
 		})
 		.state('dashboard.studentlist', {
 			url: '/teacher/studentlist?course',
@@ -64,7 +58,7 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 			}
 		})
 		.state('dashboard.studentprofile', {
-			url: '/teacher/studentprofile/:user/:course',
+			url: '/teacher/studentprofile/:user/course/:course',
             templateUrl: 'views/dashboard/student/profile.html',
             controller: 'studentProfile'
 		})
@@ -91,14 +85,14 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: 'views/dashboard/courselist.html',
 			controller: 'courseCtrl'
                 })
-                .state('studenthome', {
-                    url: '/student/home',
-                    parent: 'dashboard',
-                    templateUrl: 'views/dashboard/student/home.html',
-                    controller: 'courseCtrl'
-                })
+        .state('studenthome', {
+            url: '/student/home',
+            parent: 'dashboard',
+            templateUrl: 'views/dashboard/student/home.html',
+            controller: 'courseCtrl'
+        })
         .state('studentcourseview', {
-			url: '/student/courseview?course',
+			url: '/student/courseview/:course',
             parent: 'dashboard',
             templateUrl: 'views/dashboard/student/courseview.html',
             controller: 'courseViewCtrl'
