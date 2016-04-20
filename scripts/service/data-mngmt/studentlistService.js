@@ -1,11 +1,11 @@
-raoweb.factory('studentlistService',function($http,$rootScope,$location){
+raoweb.factory('studentlistService',function($http,$rootScope,$location,sessionService){
     return{
         attendancelist:function(course){
     
             $http({
             url: "http://raoapi.utbvirtual.edu.co:8082/course/"+    course +"/students", 
             method: "GET",
-            data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
+           // data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
             //params: {username: "T00010915", token:"   GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS"}
             }).success(function (response) {
                 
@@ -59,7 +59,7 @@ raoweb.factory('studentlistService',function($http,$rootScope,$location){
 
                 var request = $http({
                         method: "post",
-                        url: 'http://raoapi.utbvirtual.edu.co:8082/attendance?username=T00010915&token=GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS',
+                        url: 'http://raoapi.utbvirtual.edu.co:8082/attendance',
                         data: sendPost
                     });
                 var msgtxt='Asistencia realizada';

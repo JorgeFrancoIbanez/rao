@@ -4,7 +4,7 @@ raoweb.factory('courselistService',function($http,$rootScope){
             $http({
                 url: "http://raoapi.utbvirtual.edu.co:8082/teacher/"+sessionStorage.getItem('user')+"/courses",
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
+                //data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
             }).success(function (response){
                     $rootScope.json = response;
                     $rootScope.courses = response.courses;
@@ -19,8 +19,7 @@ raoweb.factory('courselistService',function($http,$rootScope){
             $http({
                 url: "http://raoapi.utbvirtual.edu.co:8082/student/"+sessionStorage.getItem('user')+"/courses",
                 method: "GET",
-
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
+                //data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
             }).success(function (response){
                     $rootScope.json = response;
                     $rootScope.courses = response.courses;
