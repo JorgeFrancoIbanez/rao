@@ -1,0 +1,137 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-abr-2016, 14:17:55
+    Author     : lauricdd
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-abr-2016, 15:38:13
+    Author     : lauricdd
+*/
+@font-face {
+  font-family: 'champagne Limousines';
+  src: url("../font/champagne_limousines/Champagne&Limousines.ttf");
+}
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-abr-2016, 14:28:24
+    Author     : lauricdd
+*/
+body {
+  font: "champagne Limousines";
+  font-weight: lighter;
+}
+
+#utb_logo {
+  width: 45%;
+}
+
+#logo {
+  width: 30%;
+  margin-top: 15px;
+}
+
+.card-panel {
+  background-color: #E0E0E0 !important;
+  background-image: url("../img/textura.png");
+  background-size: cover;
+  border: 2px solid #B6b6B6;
+}
+
+/******Form******/
+/* label focus color */
+label {
+  color: #262626;
+  font-weight: 300;
+}
+
+/* label underline focus color */
+input[type=text], input[type=password], input[type=text]:focus, input[type=password]:focus, input[type=text].valid, input[type=password].valid, input[type=text].invalid, input[type=password].invalid, input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #C1C1C1;
+  box-shadow: 0 1px 0 0 #C1C1C1;
+  background-color: #C1C1C1;
+  color: white;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.btn, .btn:hover {
+  text-transform: none;
+  background-color: #0E7049;
+}
+
+/*****Form*******/
+h5 {
+  margin-bottom: 10px;
+  font-size: 100%;
+  font-weight: 300;
+}
+
+@media (max-width: 459px) {
+  .card-panel {
+    width: 100%;
+    margin: 27% 0;
+  }
+  label, input[type=text], input[type=password] {
+    font-size: 1.2em;
+  }
+  .btn {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 460px) and (max-width: 767px) {
+  .card-panel {
+    width: 90%;
+    margin: 25% 5%;
+  }
+  label, input[type=text], input[type=password] {
+    font-size: 1.1em;
+  }
+  .btn {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .card-panel {
+    width: 80%;
+    margin: 12% 10% 0;
+  }
+  label, input[type=text], input[type=password] {
+    font-size: 1.1em;
+  }
+  .btn {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 993px) {
+  .card-panel {
+    width: 70%;
+    margin: 10% 15%;
+  }
+  label {
+    font-size: 1.2em;
+  }
+  input[type=text], input[type=password] {
+    font-size: 1.2em;
+  }
+  .btn {
+    font-size: 1.5em;
+  }
+}
