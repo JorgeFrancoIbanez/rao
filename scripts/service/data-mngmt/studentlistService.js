@@ -3,11 +3,9 @@ raoweb.factory('studentlistService',function($http,$rootScope,$location,sessionS
         attendancelist:function(course){
     
             $http({
-            url: "http://raoapi.utbvirtual.edu.co:8082/course/"+    course +"/students", 
+            url: "http://raoapi.utbvirtual.edu.co:8082/course/"+    course +"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
             method: "GET",
-           // data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
-            //params: {username: "T00010915", token:"   GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS"}
-            }).success(function (response) {
+            }).success(function (response){
                 
                 console.log(response);
                 $rootScope.json = response;

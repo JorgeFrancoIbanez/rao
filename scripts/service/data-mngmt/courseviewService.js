@@ -4,10 +4,9 @@ raoweb.factory('courseviewService',function($http,$rootScope){
         teachercourseview:function(course){
             $http({
                 //http://raoapi.utbvirtual.edu.co:8082
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students", 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
-                //params: {username: "T00010915", token:"GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS"}
+                //params: {username: "T00010915", token:"SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF"}
                 }).success(function (response) {
                 console.log(response)
                     $rootScope.json = response;
@@ -22,10 +21,9 @@ raoweb.factory('courseviewService',function($http,$rootScope){
        },
         studentcourseview:function(course){
              $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students", 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
-                //params: {username: "T00010915", token:"GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS"}
+                //params: {username: "T00010915", token:"SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF"}
                 }).success(function (response) {
                     $rootScope.courses = response;
                  console.log($rootScope.courses)
@@ -41,10 +39,10 @@ raoweb.factory('courseviewService',function($http,$rootScope){
 
 
             $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/attendance", 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/attendance?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
             }).success(function (response) {
+                console.log("response",response)
                 response = response["students"];   
                 for (i = 0; i < response.length; i++){
                     $rootScope.students_names.push(response[i]["student_name"]+ " "+response[i]["student_lastname"]); //NOMBRE DEL ESTUDIANTE
@@ -53,14 +51,16 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                     for( j = 0; j < response.length; j++){
                         switch(i){
                             case 0:
-                                $rootScope.came.push(response[j]["attendance"][0]["value"]);
+                                $rootScope.came.push(response[j]["attendance_percent"][0].value);
                                 break;
                             case 1:
-                                $rootScope.didnotcome.push(response[j]["attendance"][1]["value"]);
+                                $rootScope.didnotcome.push(response[j]["attendance_percent"][1].value);
+                                //$rootScope.didnotcome.push(response[j]["attendance"]["percent"][1].value);
                                 break;
                         }                    
                     }
                 }
+console.log("came", $rootScope.came);
 
                 $(function () { 
                     $('#container').highcharts({ 
@@ -164,15 +164,18 @@ raoweb.factory('courseviewService',function($http,$rootScope){
         studentstatistics:function(student,course){
             $rootScope.array = new Array();   
             $http({
-            url: "http://raoapi.utbvirtual.edu.co:8082/student/"+student+"/course/"+course+"/attendance", 
+            url: "http://raoapi.utbvirtual.edu.co:8082/student/"+student+"/course/"+course+"/attendance?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
             method: "GET",
-            data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
             }).success(function (response) {
                 $rootScope.att = response.attendance;
                                 console.log("esta",response)   
 
-                $rootScope.come = $rootScope.att[0].value;
-                $rootScope.notcame = $rootScope.att[1].value;  
+                $rootScope.come = $rootScope.att.percent[0].value;
+                $rootScope.notcome = $rootScope.att.percent[1].value;  
+                console.log($rootScope.come)
+                $rootScope.comenum = $rootScope.att.value[0].value;
+                $rootScope.notcomenum = $rootScope.att.value[1].value;  
+                console.log($rootScope.comenum)
                  for (i = 0; i < $rootScope.att.length; i++){
                     $rootScope.array.push([$rootScope.att.key, $rootScope.att.value]);
                 } 
@@ -246,7 +249,7 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                             y: $rootScope.come,
                         }, {
                             name: 'Not came',
-                            y: $rootScope.notcame,
+                            y: $rootScope.notcome,
                         }]
                     }] 
                 }); 
@@ -254,4 +257,3 @@ raoweb.factory('courseviewService',function($http,$rootScope){
         }
     }
 });
-

@@ -3,10 +3,10 @@ raoweb.factory('profileService',function($http,$rootScope){
         studentprofile:function(user){
             console.log(user)
             $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/student/"+user, 
+                url: "http://raoapi.utbvirtual.edu.co:8082/student/"+user+"?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
-                }).success(function (response) {
+                params: {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')}
+            }).success(function (response){
                     console.log(response)   
                     $rootScope.studentprofile = response;
                     $rootScope.uid = $rootScope.studentprofile.id;
@@ -19,10 +19,9 @@ raoweb.factory('profileService',function($http,$rootScope){
         studentstats:function(user, course){
             console.log(user)
             $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/student/"+user+"/course/"+course+"/attendance", 
+                url: "http://raoapi.utbvirtual.edu.co:8082/student/"+user+"/course/"+course+"/attendance?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
-                }).success(function (response) {
+            }).success(function (response){
                     console.log("esta",response)   
                     $rootScope.att = response.attendance
                     $rootScope.came = $rootScope.att[0].value;
@@ -32,11 +31,10 @@ raoweb.factory('profileService',function($http,$rootScope){
         teacherprofile:function(){
 
             $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/teacher/"+sessionStorage.getItem('user'), 
+                url: "http://raoapi.utbvirtual.edu.co:8082/teacher/"+sessionStorage.getItem('user')+"?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 //    url: "https://utbweb.co/teacher/"+sessionStorage.getItem('user'), 
                 method: "GET",
-                data: $.param( {username: sessionStorage.getItem('user'), token:sessionStorage.getItem('token')})
-                }).success(function (response) {
+            }).success(function (response){
                  // console.log('epaaaaa');
 
                   console.log(response);

@@ -37,7 +37,7 @@ raoweb.factory('loginService', function($http, $location,  sessionService){
 			}).catch(function(){scope.msgtxt='Datos del profesor incorrectos';
 					Materialize.toast(scope.msgtxt, 5000,'rounded');});
            /* sessionService.set('user','t00010915');
-            sessionService.set('token','GZmd0e0wBDca8lfE5jAYADTFgcXRinHHmpKAXUGS');
+            sessionService.set('token','SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF');
             sessionService.set('type','teacher');*/
            
 
@@ -49,11 +49,11 @@ raoweb.factory('loginService', function($http, $location,  sessionService){
 			$location.path('/login');
 		},
 		islogged:function(){
-			var $checkSessionServer=$http.post('http://raoapi.utbvirtual.edu.co:8082/token',{username:sessionService.get('user'), password:'mama45'}).then(function(response){
-                console.log("isloged = ",$checkSessionServer);			
-                return true;
-
-            });
+//			var $checkSessionServer=$http.post('http://raoapi.utbvirtual.edu.co:8082/token',{username:sessionService.get('user'), password:'mama45'}).then(function(response){
+//                console.log("isloged = ",$checkSessionServer);			
+//                return true;
+//
+//            });
 //			var $checkSessionServer=$http.post('https://utbweb.co/token');
 		
 		/*	if(sessionService.get('user')) return true;
