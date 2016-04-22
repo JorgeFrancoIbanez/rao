@@ -1,39 +1,27 @@
 angular.module('raoweb').
-controller('courseViewCtrl', function ($scope, $location,   $stateParams,courseviewService,sessionService) {
+controller('courseViewCtrl', function ($scope, $location,   $stateParams,courseviewService,sessionService, $state) {
         $scope.course = $stateParams.course;
+        $scope.user = sessionService.get('user');
         if(sessionStorage.length===0){
-            console.log("asdasdas");
             $location.path('/login');
         }
         if (sessionService.get('type') == 'teacher'){
             courseviewService.teachercourseview($scope.course);
-            $location.path("/dashboard/teacher/courseview").search({course :$scope.course}); 
+            $state.go('dashboard.courseview',{course:$scope.course})
+            courseviewService.getattendance($scope.course);
+
+
         }
         else{
             courseviewService.studentcourseview($scope.course);    
-            $location.path("/dashboard/student/courseview").search({course :$scope.course}); 
+            $state.go('studentcourseview',{course:$scope.course})
+            courseviewService.studentstatistics($scope.user,$scope.course);
+
         }
-
-     
-        $scope.modalClose = function(){
-        };
-
-     
-        $scope.modalDetails = function(user){
-            $scope.userid = user;
-            $('#modalDetails').openModal();
-        };
 
         $scope.modalStatistics = function(){
             $('#modalStatistics').openModal();
         };
-
-        $scope.modalStatisticsstudent = function(){
-            $('#modalStatisticsstudent').openModal();
-        };
-
-        courseviewService.getattendance($scope.course);
-        
         
         
 

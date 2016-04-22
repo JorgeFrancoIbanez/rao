@@ -49,7 +49,7 @@ raoweb.factory('loginService', function($http, $location,  sessionService){
 			$location.path('/login');
 		},
 		islogged:function(){
-			var $checkSessionServer=$http.post('http://raoapi.utbvirtual.edu.co:8082/token',sessionService.get('user')).then(function(response){
+			var $checkSessionServer=$http.post('http://raoapi.utbvirtual.edu.co:8082/token',{username:sessionService.get('user'), password:'mama45'}).then(function(response){
                 console.log("isloged = ",$checkSessionServer);			
                 return true;
 

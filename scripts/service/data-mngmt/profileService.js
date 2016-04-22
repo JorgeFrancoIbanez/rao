@@ -1,4 +1,4 @@
-raoweb.factory('profile',function($http,$rootScope){
+raoweb.factory('profileService',function($http,$rootScope){
     return{
         studentprofile:function(user){
             console.log(user)
@@ -50,7 +50,11 @@ raoweb.factory('profile',function($http,$rootScope){
                   $rootScope.email = $rootScope.teacherprofile.email;
 
             });
+        
         }
     }
 })
+/*
 
+                           
+                    */

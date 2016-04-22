@@ -4,7 +4,8 @@ angular.module('raoweb')
 
 		$scope.msgtxt='';
 		$scope.login=function(data){
-            
+            console.log(data);
+            console.log($scope)
 			loginService.login(data,$scope); //call login service
 	};
 	
