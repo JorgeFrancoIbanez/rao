@@ -24,8 +24,8 @@ raoweb.factory('profileService',function($http,$rootScope){
             }).success(function (response){
                     console.log("esta",response)   
                     $rootScope.att = response.attendance
-                    $rootScope.came = $rootScope.att[0].value;
-                    $rootScope.notcame = $rootScope.att[1].value;                
+                    $rootScope.came = $rootScope.att.value[0].value;
+                    $rootScope.notcame = $rootScope.att.value[1].value;                
             })
         },
         teacherprofile:function(){

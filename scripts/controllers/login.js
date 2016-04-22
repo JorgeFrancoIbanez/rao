@@ -1,12 +1,12 @@
 'use strict';
 angular.module('raoweb')
-  .controller('LoginCtrl', ['$scope', 'loginService',function($scope,loginService, $location) {
+  .controller('LoginCtrl', ['$scope', 'loginService','$location', '$rootScope' ,function($scope,loginService, $location, $rootScope) {
 
 		$scope.msgtxt='';
 		$scope.login=function(data){
             console.log(data);
-            console.log($scope)
-			loginService.login(data,$scope); //call login service
+            $rootScope.asd = $scope
+			loginService.login(data,$rootScope.asd); //call login service
 	};
 	
 }]);
