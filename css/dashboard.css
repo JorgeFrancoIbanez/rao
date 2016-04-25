@@ -1,0 +1,88 @@
+.dashboard {
+  /** Navbar***/
+  /* Logo */
+  /* Logo */
+  /** Nav li ***/
+  /**** Sticky footer ****/
+  /**** Sticky footer ****/
+  /*** Footer ***/
+  /*** Footer ***/
+}
+
+.dashboard body {
+  background-color: green;
+  background-image: url("../img/textura.png");
+  background-size: cover;
+  display: block;
+}
+
+.dashboard #utb_logo {
+  width: 100%;
+}
+
+.dashboard a.active, .dashboard a.active:hover {
+  background-color: #e95d00;
+  border: none;
+}
+
+.dashboard nav {
+  background-color: #044f43;
+}
+
+.dashboard .nav-wrapper {
+  padding: 0 40px;
+}
+
+.dashboard .collapsible-header {
+  border: none;
+  background-color: #044f43;
+}
+
+.dashboard * {
+  margin: 0;
+}
+
+.dashboard html, .dashboard body {
+  height: 100%;
+}
+
+.dashboard .page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -170px;
+}
+
+.dashboard .page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.dashboard .page-footer, .dashboard .page-wrap:after {
+  height: 170px;
+}
+
+.dashboard footer.page-footer {
+  background: #044f43;
+  margin-top: 0;
+  padding-top: 0;
+  color: white;
+}
+
+.dashboard footer.page-footer #credits {
+  padding: 30px 100px 0;
+}
+
+.dashboard footer.page-footer #logo_footer {
+  padding: 30px 0 0 100px;
+}
+
+.dashboard #credits p {
+  font-size: 0.8em;
+  margin-top: 2%;
+}
+
+@media (min-width: 993px) {
+  .dashboard nav li a {
+    font-size: 1.6em;
+  }
+}
