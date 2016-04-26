@@ -21,6 +21,44 @@ and open the template in the editor.
   src: url("../font/champagne_limousines/Champagne&Limousines.ttf");
 }
 
+body {
+  font-family: 'champagne Limousines';
+  font-weight: lighter;
+  background-color: #EFEFEF;
+}
+
+/**** Sticky footer ****/
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -170px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.page-footer, .page-wrap:after {
+  height: 170px;
+}
+
+footer.page-footer {
+  background: #262626;
+  margin-top: 0;
+  padding-top: 0;
+  color: white;
+}
+
+/**** Sticky footer ****/
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -30,37 +68,36 @@ and open the template in the editor.
     Created on : 20-abr-2016, 14:28:24
     Author     : lauricdd
 */
-body {
-  font: "champagne Limousines";
-  font-weight: lighter;
+#login-page {
+  /******Form******/
+  /* label focus color */
+  /* label underline focus color */
+  /*****Form*******/
 }
 
-#utb_logo {
+#login-page #utb_logo {
   width: 45%;
 }
 
-#logo {
+#login-page #logo {
   width: 30%;
   margin-top: 15px;
 }
 
-.card-panel {
+#login-page .card-panel {
   background-color: #E0E0E0 !important;
   background-image: url("../img/textura.png");
   background-size: cover;
   border: 2px solid #B6b6B6;
 }
 
-/******Form******/
-/* label focus color */
-label {
+#login-page label {
   color: #262626;
   font-weight: 300;
 }
 
-/* label underline focus color */
-input[type=text], input[type=password], input[type=text]:focus, input[type=password]:focus, input[type=text].valid, input[type=password].valid, input[type=text].invalid, input[type=password].invalid, input[type=text]:focus:not([readonly]),
-input[type=password]:focus:not([readonly]) {
+#login-page input[type=text], #login-page input[type=password], #login-page input[type=text]:focus, #login-page input[type=password]:focus, #login-page input[type=text].valid, #login-page input[type=password].valid, #login-page input[type=text].invalid, #login-page input[type=password].invalid, #login-page input[type=text]:focus:not([readonly]),
+#login-page input[type=password]:focus:not([readonly]) {
   border-bottom: 1px solid #C1C1C1;
   box-shadow: 0 1px 0 0 #C1C1C1;
   background-color: #C1C1C1;
@@ -69,69 +106,259 @@ input[type=password]:focus:not([readonly]) {
   margin-top: 10px;
 }
 
-.btn, .btn:hover {
+#login-page .btn, #login-page .btn:hover {
   text-transform: none;
   background-color: #0E7049;
 }
 
-/*****Form*******/
-h5 {
+#login-page h5 {
   margin-bottom: 10px;
-  font-size: 100%;
+  font-size: 120%;
   font-weight: 300;
 }
 
 @media (max-width: 459px) {
-  .card-panel {
+  #login-page .card-panel {
     width: 100%;
     margin: 27% 0;
   }
-  label, input[type=text], input[type=password] {
+  #login-page label, #login-page input[type=text], #login-page input[type=password] {
     font-size: 1.2em;
   }
-  .btn {
+  #login-page .btn {
     font-size: 1.3em;
   }
 }
 
 @media (min-width: 460px) and (max-width: 767px) {
-  .card-panel {
+  #login-page .card-panel {
     width: 90%;
     margin: 25% 5%;
   }
-  label, input[type=text], input[type=password] {
+  #login-page label, #login-page input[type=text], #login-page input[type=password] {
     font-size: 1.1em;
   }
-  .btn {
+  #login-page .btn {
     font-size: 1.3em;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .card-panel {
+  #login-page .card-panel {
     width: 80%;
     margin: 12% 10% 0;
   }
-  label, input[type=text], input[type=password] {
+  #login-page label, #login-page input[type=text], #login-page input[type=password] {
     font-size: 1.1em;
   }
-  .btn {
+  #login-page .btn {
     font-size: 1.2em;
   }
 }
 
 @media (min-width: 993px) {
-  .card-panel {
+  #login-page .card-panel {
     width: 70%;
     margin: 10% 15%;
   }
-  label {
+  #login-page label {
     font-size: 1.2em;
   }
-  input[type=text], input[type=password] {
+  #login-page input[type=text], #login-page input[type=password] {
     font-size: 1.2em;
   }
-  .btn {
+  #login-page .btn {
     font-size: 1.5em;
+  }
+}
+
+.dashboard {
+  /** Navbar***/
+  /* Logo */
+  /* Logo */
+  /** Nav li ***/
+  /*** Footer ***/
+  /*** Footer ***/
+}
+
+.dashboard a.active, .dashboard a.active:hover {
+  background-color: #EFEFEF;
+  border: none;
+  color: #0E7049;
+}
+
+.dashboard nav {
+  background-color: #262626;
+  box-shadow: none;
+}
+
+.dashboard .nav-wrapper {
+  padding: 0 40px;
+}
+
+.dashboard .nav-wrapper img {
+  width: 8%;
+  margin-top: 8px;
+}
+
+.dashboard .collapsible-header {
+  border: none;
+  background-color: #044f43;
+}
+
+.dashboard footer.page-footer #credits {
+  padding: 30px 100px 0;
+}
+
+.dashboard #credits p {
+  font-size: 0.8em;
+  margin-top: 2%;
+}
+
+@media (min-width: 993px) {
+  .dashboard nav li a {
+    font-size: 1.6em;
+  }
+}
+
+.view {
+  /***Card panel***/
+  /*div.card-panel{
+        margin-bottom: 0;
+    }*/
+  /*.name{
+        background-color: #e0e0e0;
+    }*/
+  /***Card panel***/
+  /*#profesor{
+        margin-top: 0;
+        background-color: transparent;
+    }*/
+}
+
+.view .card-panel {
+  background-color: #efefef;
+  padding: 0;
+}
+
+.view h1 {
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+.view #titulo {
+  background-color: #044f43;
+  padding-left: 60px;
+}
+
+.view .collection-item {
+  margin: 3% 5%;
+  width: 90%;
+  background-color: #e0e0e0;
+  padding: 10px;
+}
+
+.view .collection-item a {
+  color: #8e8e8e;
+}
+
+.view .collection-item span {
+  margin-bottom: 0;
+}
+
+.view .collection-item p {
+  margin-top: 0;
+}
+
+.view .name a {
+  color: #6f6f6f;
+}
+
+.view .button {
+  margin-top: 2px;
+  text-transform: none;
+}
+
+@media (max-width: 459px) {
+  .view .card-panel {
+    margin: 5% 0;
+    border: 5px solid #043a30;
+  }
+  .view h1 {
+    font-size: 2.7em;
+  }
+  .view .button {
+    padding: 0;
+  }
+  .view #profesor {
+    margin: 5% 0;
+  }
+}
+
+@media (min-width: 460px) and (max-width: 767px) {
+  .view {
+    /** Card panel ***/
+    /** Card panel ***/
+  }
+  .view .card-panel {
+    margin: 5% 0;
+    border: 5px solid #043a30;
+  }
+  .view #logo {
+    font-size: 4em;
+  }
+  .view h1 {
+    font-size: 2.7em;
+  }
+  .view #profesor {
+    margin: 5% 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .view {
+    /** Card panel ***/
+    /** Card panel ***/
+  }
+  .view .card-panel {
+    margin: 10% 0;
+    border: 12px solid #043a30;
+  }
+  .view #logo {
+    font-size: 4em;
+  }
+  .view h1 {
+    font-size: 3.6em;
+  }
+  .view #profesor {
+    margin: 10% 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .view {
+    /** Card panel ***/
+    /** Card panel ***/
+  }
+  .view .card-panel {
+    margin: 6% 12.5%;
+    width: 75%;
+    border: 15px solid #043a30;
+  }
+  .view #logo {
+    font-size: 5em;
+  }
+  .view h1 {
+    font-size: 4em;
+  }
+  .view #name {
+    font-size: 1.2em;
+  }
+  .view .collection-item {
+    font-size: 1.4em;
+  }
+  .view #profesor {
+    margin: 6% 12.5%;
+    width: 75%;
   }
 }

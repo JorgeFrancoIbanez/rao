@@ -13,9 +13,43 @@ and open the template in the editor.
     src: url('../font/champagne_limousines/Champagne&Limousines.ttf'); 
 }
 
-$champagne: 'champagne Limousines';
 $primary: #E0E0E0; //Light grey 
 $accent: #B6b6B6; //Dark grey
-$text: #262626; //Black
+$black: #262626; //Black
 $dark_primary: #C1C1C1; //Dark grey
-$secondary: #0E7049; //Green
+$secondary: #0E7049; //Green 
+$background: #EFEFEF; //Light grey
+
+body{
+    font-family: 'champagne Limousines';
+    font-weight: lighter;
+    background-color: $background;
+}
+
+/**** Sticky footer ****/
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -170px; 
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.page-footer, .page-wrap:after {
+    height: 170px; 
+}
+footer.page-footer {
+    background: $black;
+    margin-top: 0;
+    padding-top: 0;
+    color: white;
+}
+/**** Sticky footer ****/   

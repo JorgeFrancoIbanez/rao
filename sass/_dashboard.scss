@@ -1,0 +1,51 @@
+
+.dashboard{
+    /** Navbar***/
+    a.active, a.active:hover{
+        background-color: $background;
+        border: none;
+        color: $secondary;
+    }
+
+    nav{
+        background-color: $black;
+        box-shadow: none;
+    }
+
+    .nav-wrapper{
+        padding: 0 40px;
+    }
+
+    /* Logo */
+    .nav-wrapper img{
+        width: 8%;
+        margin-top: 8px;
+    }
+    /* Logo */
+
+    .collapsible-header {
+        border: none;
+        background-color: #044f43;
+    }
+    /** Nav li ***/
+    
+    /*** Footer ***/
+    footer.page-footer #credits{
+        padding: 30px 100px 0;
+    }
+
+
+    #credits p{
+        font-size: 0.8em;
+        margin-top: 2%;
+    }
+    /*** Footer ***/
+    
+    @media (min-width:993px) {
+        nav li a{
+            font-size: 1.6em;
+        }
+    }
+    
+    
+}

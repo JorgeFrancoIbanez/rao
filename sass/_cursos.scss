@@ -1,0 +1,155 @@
+.view{
+    /***Card panel***/
+    .card-panel {
+        background-color: #efefef;
+        padding: 0;
+    }
+
+    /*div.card-panel{
+        margin-bottom: 0;
+    }*/
+
+    h1{
+        text-align: left;
+        margin: 0 0 5px 0;
+    }
+
+    #titulo{
+        background-color: #044f43;
+        padding-left: 60px;
+    }
+
+    .collection-item{
+        margin: 3% 5%;
+        width: 90%;
+        background-color: #e0e0e0;
+        padding: 10px;
+
+    }
+
+    .collection-item a{
+        color: #8e8e8e;
+    }
+
+    .collection-item span{
+        margin-bottom: 0;
+    }
+
+    .collection-item p{
+        margin-top: 0;
+    }
+
+    /*.name{
+        background-color: #e0e0e0;
+    }*/
+
+    .name a{
+        color: #6f6f6f;
+    }
+
+    .button{
+        margin-top: 2px;
+        text-transform: none;
+    }
+    /***Card panel***/
+
+    /*#profesor{
+        margin-top: 0;
+        background-color: transparent;
+    }*/
+
+
+    @media (max-width:459px) {
+        .card-panel{
+            margin: 5% 0;
+            border: 5px solid #043a30;
+        }
+
+        h1{
+            font-size: 2.7em;
+        }
+
+        .button{
+            padding: 0;
+        }
+
+        #profesor{
+            margin: 5% 0;
+        }
+    }
+
+    @media (min-width: 460px) and (max-width : 767px){
+        /** Card panel ***/
+        .card-panel{
+            margin: 5% 0;
+            border: 5px solid #043a30;
+        }
+
+        #logo{
+            font-size: 4em;
+        }
+
+        h1{
+            font-size: 2.7em;
+        }
+        /** Card panel ***/
+
+        #profesor{
+            margin: 5% 0;
+        }
+    }    
+
+    @media (min-width :768px) and (max-width : 992px) {
+        /** Card panel ***/
+        .card-panel{
+            margin: 10% 0;
+            border: 12px solid #043a30;
+        }
+
+        #logo{
+            font-size: 4em;
+        }
+
+        h1{
+            font-size: 3.6em;
+        }
+        /** Card panel ***/
+
+        #profesor{
+            margin: 10% 0;
+        }
+    }
+
+    @media (min-width:993px) {
+        /** Card panel ***/
+        .card-panel{
+            margin: 6% 12.5%;
+            width: 75%;
+            border: 15px solid #043a30;
+        }
+
+        #logo{
+            font-size: 5em;
+        }
+
+        h1{
+            font-size: 4em;
+        }
+
+        #name{
+            font-size: 1.2em;
+        }
+
+        .collection-item{
+            font-size: 1.4em;
+        }
+        /** Card panel ***/
+
+        #profesor{
+            margin: 6% 12.5%;
+            width: 75%;
+        }
+
+
+    }
+} 
