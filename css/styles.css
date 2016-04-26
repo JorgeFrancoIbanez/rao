@@ -39,16 +39,11 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -170px;
-}
-
-.page-wrap:after {
-  content: "";
-  display: block;
+  margin-bottom: -140px;
 }
 
 .page-footer, .page-wrap:after {
-  height: 170px;
+  height: 140px;
 }
 
 footer.page-footer {
@@ -174,8 +169,6 @@ and open the template in the editor.
 
 .dashboard {
   /** Navbar***/
-  /* Logo */
-  /* Logo */
   /** Nav li ***/
   /*** Footer ***/
   /*** Footer ***/
@@ -193,12 +186,7 @@ and open the template in the editor.
 }
 
 .dashboard .nav-wrapper {
-  padding: 0 40px;
-}
-
-.dashboard .nav-wrapper img {
-  width: 8%;
-  margin-top: 8px;
+  padding: 0 30px;
 }
 
 .dashboard .collapsible-header {
@@ -206,22 +194,107 @@ and open the template in the editor.
   background-color: #044f43;
 }
 
-.dashboard footer.page-footer #credits {
-  padding: 30px 100px 0;
+.dashboard footer.page-footer a {
+  color: white;
+  font-weight: bold;
 }
 
 .dashboard #credits p {
   font-size: 0.8em;
-  margin-top: 2%;
+  margin-top: 1em;
 }
 
-@media (min-width: 993px) {
+@media (max-width: 459px) {
+  .dashboard {
+    /* Logo */
+    /* Logo */
+    /** Navbar***/
+    /** Footer ***/
+    /** Footer ***/
+  }
   .dashboard nav li a {
-    font-size: 1.6em;
+    font-size: 0.8em;
+  }
+  .dashboard .nav-wrapper img {
+    width: 90px;
+  }
+  .dashboard footer.page-footer #credits {
+    padding: 20px 90px 0 0;
+  }
+  .dashboard footer.page-footer img {
+    padding: 20px 40px 0 0;
   }
 }
 
-.view {
+@media (min-width: 460px) and (max-width: 767px) {
+  .dashboard {
+    /* Logo */
+    /* Logo */
+    /** Navbar***/
+    /** Footer ***/
+    /** Footer ***/
+  }
+  .dashboard nav li a {
+    font-size: 1.1em;
+  }
+  .dashboard .nav-wrapper img {
+    width: 98px;
+  }
+  .dashboard footer.page-footer #credits {
+    padding: 20px 90px 0 0;
+  }
+  .dashboard footer.page-footer img {
+    padding: 20px 40px 0 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .dashboard {
+    /** Navbar***/
+    /* Logo */
+    /* Logo */
+    /** Navbar***/
+    /** Footer ***/
+    /** Footer ***/
+  }
+  .dashboard nav li a {
+    font-size: 1.5em;
+  }
+  .dashboard .nav-wrapper img {
+    width: 105px;
+  }
+  .dashboard footer.page-footer #credits {
+    padding: 20px 90px 0 0;
+  }
+  .dashboard footer.page-footer img {
+    padding: 20px 40px 0 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .dashboard {
+    /** Navbar***/
+    /* Logo */
+    /* Logo */
+    /** Navbar***/
+    /** Footer ***/
+    /** Footer ***/
+  }
+  .dashboard nav li a {
+    font-size: 1.6em;
+  }
+  .dashboard .nav-wrapper img {
+    width: 110px;
+  }
+  .dashboard footer.page-footer #credits {
+    padding: 20px 80px 0;
+  }
+  .dashboard footer.page-footer img {
+    padding: 20px 40px 0 0;
+  }
+}
+
+#courses {
   /***Card panel***/
   /*div.card-panel{
         margin-bottom: 0;
@@ -236,128 +309,128 @@ and open the template in the editor.
     }*/
 }
 
-.view .card-panel {
+#courses .card-panel {
   background-color: #efefef;
   padding: 0;
 }
 
-.view h1 {
+#courses h1 {
   text-align: left;
   margin: 0 0 5px 0;
 }
 
-.view #titulo {
+#courses #titulo {
   background-color: #044f43;
   padding-left: 60px;
 }
 
-.view .collection-item {
+#courses .collection-item {
   margin: 3% 5%;
   width: 90%;
   background-color: #e0e0e0;
   padding: 10px;
 }
 
-.view .collection-item a {
+#courses .collection-item a {
   color: #8e8e8e;
 }
 
-.view .collection-item span {
+#courses .collection-item span {
   margin-bottom: 0;
 }
 
-.view .collection-item p {
+#courses .collection-item p {
   margin-top: 0;
 }
 
-.view .name a {
+#courses .name a {
   color: #6f6f6f;
 }
 
-.view .button {
+#courses .button {
   margin-top: 2px;
   text-transform: none;
 }
 
 @media (max-width: 459px) {
-  .view .card-panel {
+  #courses .card-panel {
     margin: 5% 0;
     border: 5px solid #043a30;
   }
-  .view h1 {
+  #courses h1 {
     font-size: 2.7em;
   }
-  .view .button {
+  #courses .button {
     padding: 0;
   }
-  .view #profesor {
+  #courses #profesor {
     margin: 5% 0;
   }
 }
 
 @media (min-width: 460px) and (max-width: 767px) {
-  .view {
+  #courses {
     /** Card panel ***/
     /** Card panel ***/
   }
-  .view .card-panel {
+  #courses .card-panel {
     margin: 5% 0;
     border: 5px solid #043a30;
   }
-  .view #logo {
+  #courses #logo {
     font-size: 4em;
   }
-  .view h1 {
+  #courses h1 {
     font-size: 2.7em;
   }
-  .view #profesor {
+  #courses #profesor {
     margin: 5% 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .view {
+  #courses {
     /** Card panel ***/
     /** Card panel ***/
   }
-  .view .card-panel {
+  #courses .card-panel {
     margin: 10% 0;
     border: 12px solid #043a30;
   }
-  .view #logo {
+  #courses #logo {
     font-size: 4em;
   }
-  .view h1 {
+  #courses h1 {
     font-size: 3.6em;
   }
-  .view #profesor {
+  #courses #profesor {
     margin: 10% 0;
   }
 }
 
 @media (min-width: 993px) {
-  .view {
+  #courses {
     /** Card panel ***/
     /** Card panel ***/
   }
-  .view .card-panel {
+  #courses .card-panel {
     margin: 6% 12.5%;
     width: 75%;
     border: 15px solid #043a30;
   }
-  .view #logo {
+  #courses #logo {
     font-size: 5em;
   }
-  .view h1 {
+  #courses h1 {
     font-size: 4em;
   }
-  .view #name {
+  #courses #name {
     font-size: 1.2em;
   }
-  .view .collection-item {
+  #courses .collection-item {
     font-size: 1.4em;
   }
-  .view #profesor {
+  #courses #profesor {
     margin: 6% 12.5%;
     width: 75%;
   }

@@ -1,45 +1,32 @@
-<<<<<<< Updated upstream
-<div class="dashboard-page">
-    <div class="container-fluid">
-        <a ui-sref="logout" ng-click="logout()" class="btn btn-white btn-outline btn-rounded btn-m">Logout</a>
-        <div class="row">
-        <!--<div ui-sref="dashboard.courseview({course : c.nrc})"></div> -->
-            <div class="col-sm-12  col-md-offset-2 main" ui-view></div>
-        </div>
-    </div>
-</div>
-=======
-
 <div class="dashboard">
     <nav>
         <div class="nav-wrapper">
             <img class="responsive-img" src="img/logo.png" alt="logo">
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
+            <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">-->
+            <ul class="right">
                 <li><a href="#" class="active">Cursos</a></li>
                 <li><a href='#'>Alertas</a></li>
                 <li><a href="#">Cerrar sesión</a></li>
             </ul>
-            <ul class="side-nav" id="mobile-demo">
+            <!--<ul class="side-nav" id="mobile-demo">
                 <li><a href="#">Cursos</a></li>
                 <li><a href='#'>Alertas</a></li>
                 <li><a href="#">Cerrar sesión</a></li>
-            </ul>
+            </ul>-->
         </div>
     </nav>
 
-    <div class="view" ui-view></div>
+    <div ui-view></div>
 
     <footer class="page-footer">
         <div class="row"> 
             <div class="col m9 l9" id="credits">
                 <ul>
-                    <li>Desarrollada por CEIS en colaboración con la <a href="http://www.unitecnologica.edu.co/educacionadistancia/">Coordinación de Educación a Distancia de la UTB</a></li>
-                </ul>
-                <ul class="hide-on-small-only">
+                    <li>Desarrollado por la Facultad de Ingeniería de Sistemas y la <a href="http://www.unitecnologica.edu.co/educacionadistancia/">Coordinación de Educación a Distancia</a> de la UTB.</li>
                     <li>Parque Industrial y Tecnológico Carlos Vélez Pombo, Km 1 Vía Turbaco. - Pbx: 57-5-6535200 - Fax: 57-5- 6619240</li>
                     <li>Campus Casa Lemaitre: Calle del Bouquet cra.21 #25-92, barrio Manga - Tels.: (5) 6606041-42-4</li>
-                </ul>
+                </ul> 
                 <p>Copyright © 2016 - Cartagena - Bolívar - Colombia</p>
             </div>
             <div class="col m3 l3" id="logo_footer">
@@ -47,6 +34,4 @@
             </div>
         </div>
     </footer>
-    
 </div> 
->>>>>>> Stashed changes

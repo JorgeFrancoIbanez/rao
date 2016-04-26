@@ -13,15 +13,8 @@
     }
 
     .nav-wrapper{
-        padding: 0 40px;
+        padding: 0 30px;
     }
-
-    /* Logo */
-    .nav-wrapper img{
-        width: 8%;
-        margin-top: 8px;
-    }
-    /* Logo */
 
     .collapsible-header {
         border: none;
@@ -30,21 +23,109 @@
     /** Nav li ***/
     
     /*** Footer ***/
-    footer.page-footer #credits{
-        padding: 30px 100px 0;
+    footer.page-footer a{
+        color: white;
+        font-weight: bold;
     }
-
-
+    
     #credits p{
         font-size: 0.8em;
-        margin-top: 2%;
+        margin-top: 1em;
     }
     /*** Footer ***/
+      
+    @media (max-width:459px) {
+        nav li a{
+            font-size: 0.8em;
+        }
+        
+        /* Logo */
+        .nav-wrapper img{
+            width: 90px;
+        }
+        /* Logo */
+        /** Navbar***/
+        
+        /** Footer ***/
+        footer.page-footer #credits{
+            padding: 20px 90px 0 0;
+        }
+    
+        footer.page-footer img{
+            padding: 20px 40px 0 0;
+        }
+        /** Footer ***/
+    }
+
+    @media (min-width: 460px) and (max-width : 767px){
+        nav li a{
+            font-size: 1.1em;
+        }
+        
+        /* Logo */
+        .nav-wrapper img{
+            width: 98px;
+        }
+        /* Logo */
+        /** Navbar***/
+        
+        /** Footer ***/
+        footer.page-footer #credits{
+            padding: 20px 90px 0 0;
+        }
+    
+        footer.page-footer img{
+            padding: 20px 40px 0 0;
+        }
+        /** Footer ***/
+    }
+
+    @media (min-width :768px) and (max-width : 992px) {
+        /** Navbar***/
+        nav li a{
+            font-size: 1.5em;
+        }
+        
+        /* Logo */
+        .nav-wrapper img{
+            width: 105px;
+        }
+        /* Logo */
+        /** Navbar***/
+        
+        /** Footer ***/
+        footer.page-footer #credits{
+            padding: 20px 90px 0 0;
+        }
+    
+        footer.page-footer img{
+            padding: 20px 40px 0 0;
+        }
+        /** Footer ***/
+    }
     
     @media (min-width:993px) {
+        /** Navbar***/
         nav li a{
             font-size: 1.6em;
         }
+        
+        /* Logo */
+        .nav-wrapper img{
+            width: 110px;
+        }
+        /* Logo */
+        /** Navbar***/
+        
+        /** Footer ***/
+        footer.page-footer #credits{
+            padding: 20px 80px 0;
+        }
+    
+        footer.page-footer img{
+            padding: 20px 40px 0 0;
+        }
+        /** Footer ***/
     }
     
     

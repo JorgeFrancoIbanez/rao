@@ -26,6 +26,7 @@ body{
     background-color: $background;
 }
 
+
 /**** Sticky footer ****/
 * {
     margin: 0;
@@ -37,14 +38,10 @@ html, body {
 .page-wrap {
     min-height: 100%;
     /* equal to footer height */
-    margin-bottom: -170px; 
-}
-.page-wrap:after {
-    content: "";
-    display: block;
+    margin-bottom: -140px; 
 }
 .page-footer, .page-wrap:after {
-    height: 170px; 
+    height: 140px; 
 }
 footer.page-footer {
     background: $black;
@@ -52,4 +49,5 @@ footer.page-footer {
     padding-top: 0;
     color: white;
 }
-/**** Sticky footer ****/   
+/**** Sticky footer ****/ 
+    
