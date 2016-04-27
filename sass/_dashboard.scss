@@ -23,16 +23,29 @@
     /** Nav li ***/
     
     /*** Footer ***/
+    footer.page-footer {
+        /*background: $black;
+        margin-top: 0;
+        padding-top: 0;*/
+    }
+    
     footer.page-footer a{
         color: white;
         font-weight: bold;
     }
-    
-    #credits p{
-        font-size: 0.8em;
-        margin-top: 1em;
-    }
     /*** Footer ***/
+    
+    /*** Sticky Footer ***/
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+    /*** Sticky Footer ***/ 
       
     @media (max-width:459px) {
         nav li a{
@@ -45,16 +58,6 @@
         }
         /* Logo */
         /** Navbar***/
-        
-        /** Footer ***/
-        footer.page-footer #credits{
-            padding: 20px 90px 0 0;
-        }
-    
-        footer.page-footer img{
-            padding: 20px 40px 0 0;
-        }
-        /** Footer ***/
     }
 
     @media (min-width: 460px) and (max-width : 767px){
@@ -68,16 +71,6 @@
         }
         /* Logo */
         /** Navbar***/
-        
-        /** Footer ***/
-        footer.page-footer #credits{
-            padding: 20px 90px 0 0;
-        }
-    
-        footer.page-footer img{
-            padding: 20px 40px 0 0;
-        }
-        /** Footer ***/
     }
 
     @media (min-width :768px) and (max-width : 992px) {
@@ -92,16 +85,6 @@
         }
         /* Logo */
         /** Navbar***/
-        
-        /** Footer ***/
-        footer.page-footer #credits{
-            padding: 20px 90px 0 0;
-        }
-    
-        footer.page-footer img{
-            padding: 20px 40px 0 0;
-        }
-        /** Footer ***/
     }
     
     @media (min-width:993px) {
@@ -116,16 +99,6 @@
         }
         /* Logo */
         /** Navbar***/
-        
-        /** Footer ***/
-        footer.page-footer #credits{
-            padding: 20px 80px 0;
-        }
-    
-        footer.page-footer img{
-            padding: 20px 40px 0 0;
-        }
-        /** Footer ***/
     }
     
     

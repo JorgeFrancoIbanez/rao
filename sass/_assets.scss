@@ -25,29 +25,3 @@ body{
     font-weight: lighter;
     background-color: $background;
 }
-
-
-/**** Sticky footer ****/
-* {
-    margin: 0;
-}
-html, body {
-    height: 100%;
-}
-
-.page-wrap {
-    min-height: 100%;
-    /* equal to footer height */
-    margin-bottom: -140px; 
-}
-.page-footer, .page-wrap:after {
-    height: 140px; 
-}
-footer.page-footer {
-    background: $black;
-    margin-top: 0;
-    padding-top: 0;
-    color: white;
-}
-/**** Sticky footer ****/ 
-    
