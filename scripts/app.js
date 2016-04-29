@@ -110,11 +110,3 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 
-raoweb.controller('logoutctrl', ['$scope', 'loginService', function ($scope, loginService) {
-    $scope.txt = 'Page Home';
-    loginService.logout();
-
-    $scope.username = sessionStorage.getItem('user');
-    console.log('entro log', $scope.username);
-
-}]);

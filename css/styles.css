@@ -8221,7 +8221,16 @@ and open the template in the editor.
   /** Nav li ***/
   /*** Footer ***/
   /*** Footer ***/
-  /*** Sticky Footer ***/
+  /*** Sticky Footer 
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }***/
   /*** Sticky Footer ***/
 }
 
@@ -8245,10 +8254,12 @@ and open the template in the editor.
   background-color: #044f43;
 }
 
+.dashboard footer.page-footer .footer-copyright {
+  background-color: #3D3D40;
+}
+
 .dashboard footer.page-footer {
-  /*background: $black;
-        margin-top: 0;
-        padding-top: 0;*/
+  background-color: #262626;
 }
 
 .dashboard footer.page-footer a {
@@ -8256,27 +8267,26 @@ and open the template in the editor.
   font-weight: bold;
 }
 
-.dashboard body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.dashboard main {
-  flex: 1 0 auto;
-}
-
 @media (max-width: 459px) {
   .dashboard {
     /* Logo */
     /* Logo */
     /** Navbar***/
+    /*** Footer ***/
+    /*** Footer ***/
   }
   .dashboard nav li a {
     font-size: 0.8em;
   }
   .dashboard .nav-wrapper img {
     width: 90px;
+  }
+  .dashboard footer.page-footer {
+    text-align: center;
+  }
+  .dashboard #logo_footer img {
+    width: 200px;
+    padding-top: 10px;
   }
 }
 
@@ -8285,12 +8295,21 @@ and open the template in the editor.
     /* Logo */
     /* Logo */
     /** Navbar***/
+    /*** Footer ***/
+    /*** Footer ***/
   }
   .dashboard nav li a {
     font-size: 1.1em;
   }
   .dashboard .nav-wrapper img {
     width: 98px;
+  }
+  .dashboard footer.page-footer {
+    text-align: center;
+  }
+  .dashboard #logo_footer img {
+    width: 250px;
+    padding-top: 10px;
   }
 }
 
@@ -8300,12 +8319,21 @@ and open the template in the editor.
     /* Logo */
     /* Logo */
     /** Navbar***/
+    /*** Footer ***/
+    /*** Footer ***/
   }
   .dashboard nav li a {
     font-size: 1.5em;
   }
   .dashboard .nav-wrapper img {
     width: 105px;
+  }
+  .dashboard footer.page-footer {
+    text-align: center;
+  }
+  .dashboard #logo_footer img {
+    width: 260px;
+    padding-top: 10px;
   }
 }
 
@@ -8315,12 +8343,57 @@ and open the template in the editor.
     /* Logo */
     /* Logo */
     /** Navbar***/
+    /*** Footer ***/
+    /*** Footer ***/
   }
   .dashboard nav li a {
     font-size: 1.6em;
   }
   .dashboard .nav-wrapper img {
     width: 110px;
+  }
+  .dashboard #logo_footer img {
+    width: 420px;
+    padding-top: 10px;
+  }
+}
+
+.home .fontblue {
+  color: #039BE5 !important;
+}
+
+.home .fontgreen {
+  color: #0E7049 !important;
+}
+
+.home .collectiondiv {
+  margin: 5px 0;
+}
+
+.home .collectiondiv a {
+  text-align: left;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.home .collectiondiv p {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+}
+
+.home .asistenciadiv {
+  margin: 5px 0;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .home .asistenciadiv a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .home .asistenciadiv a {
+    font-size: 1.3rem;
   }
 }
 

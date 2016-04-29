@@ -36,6 +36,7 @@ raoweb.factory('loginService', function ($http, $location, sessionService) {
              sessionService.set('type','teacher');*/
         },
         logout: function () {
+            console.log("entro");
             sessionService.destroy('user');
             sessionService.destroy('token');
             sessionService.destroy('type');

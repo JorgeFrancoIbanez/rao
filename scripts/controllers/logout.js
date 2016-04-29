@@ -7,7 +7,6 @@
 'use strict';
 angular.module('raoweb')
         .controller('logoutctrl', ['$scope', 'loginService', '$location', '$rootScope', function ($scope, loginService, $location, $rootScope) {
-               console.log("entro");
-            loginService.logout();
+              loginService.logout();
 
             }]);

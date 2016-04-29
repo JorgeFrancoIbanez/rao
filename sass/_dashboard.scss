@@ -21,21 +21,23 @@
         background-color: #044f43;
     }
     /** Nav li ***/
-    
+
     /*** Footer ***/
-    footer.page-footer {
-        /*background: $black;
-        margin-top: 0;
-        padding-top: 0;*/
+    footer.page-footer .footer-copyright {
+        background-color: #3D3D40;
     }
-    
+
+    footer.page-footer {
+        background-color: $black;
+    }
+
     footer.page-footer a{
         color: white;
         font-weight: bold;
     }
     /*** Footer ***/
-    
-    /*** Sticky Footer ***/
+
+    /*** Sticky Footer 
     body {
         display: flex;
         min-height: 100vh;
@@ -44,33 +46,55 @@
 
     main {
         flex: 1 0 auto;
-    }
+    }***/
     /*** Sticky Footer ***/ 
-      
+
     @media (max-width:459px) {
         nav li a{
             font-size: 0.8em;
         }
-        
+
         /* Logo */
         .nav-wrapper img{
             width: 90px;
         }
         /* Logo */
         /** Navbar***/
+        
+        /*** Footer ***/
+        footer.page-footer{
+            text-align: center;
+        } 
+        
+        #logo_footer img{
+            width: 200px;
+            padding-top: 10px;
+        }
+        /*** Footer ***/
     }
 
     @media (min-width: 460px) and (max-width : 767px){
         nav li a{
             font-size: 1.1em;
         }
-        
+
         /* Logo */
         .nav-wrapper img{
             width: 98px;
         }
         /* Logo */
         /** Navbar***/
+        
+        /*** Footer ***/
+        footer.page-footer{
+            text-align: center;
+        } 
+        
+        #logo_footer img{
+            width: 250px;
+            padding-top: 10px;
+        }
+        /*** Footer ***/
     }
 
     @media (min-width :768px) and (max-width : 992px) {
@@ -78,28 +102,44 @@
         nav li a{
             font-size: 1.5em;
         }
-        
+
         /* Logo */
         .nav-wrapper img{
             width: 105px;
         }
         /* Logo */
         /** Navbar***/
+        
+        /*** Footer ***/
+        footer.page-footer{
+            text-align: center;
+        } 
+        
+        #logo_footer img{
+            width: 260px;
+            padding-top: 10px;
+        }
+        /*** Footer ***/
     }
-    
+
     @media (min-width:993px) {
         /** Navbar***/
         nav li a{
             font-size: 1.6em;
         }
-        
+
         /* Logo */
         .nav-wrapper img{
             width: 110px;
         }
         /* Logo */
         /** Navbar***/
+
+        /*** Footer ***/
+        #logo_footer img{
+            width: 420px;
+            padding-top: 10px;
+        }
+        /*** Footer ***/
     }
-    
-    
 }

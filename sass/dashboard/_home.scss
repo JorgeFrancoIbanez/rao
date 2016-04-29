@@ -1,0 +1,42 @@
+.home{
+    .fontblue{
+        color: $font_blue !important;
+    }
+    
+    .fontgreen{
+        color: $secondary !important;
+    }
+    
+    .collectiondiv{
+        margin: 5px 0;
+    }
+    
+    .collectiondiv a{
+        text-align: left;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        
+    }
+    
+    .collectiondiv p{
+        margin-bottom: 0;
+        font-size: 1.4rem;
+    }
+    
+    .asistenciadiv{
+        margin: 5px 0;
+    }
+    
+    @media (min-width :768px) and (max-width : 992px) {
+        .asistenciadiv a{
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (min-width:993px) {
+        .asistenciadiv a{
+            font-size: 1.3rem;
+        }
+    }
+}
+

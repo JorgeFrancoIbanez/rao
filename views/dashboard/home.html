@@ -1,35 +1,22 @@
-<div>
-    <h2>Pantalla de bienvenida  </h2>
-    <div class="jumbotron">
-        <div class="container">
-            <div>
-                <h2>Lista de cursos  <small>Aqui se mostrara la lista de cursos de cada profesor</small></h2>
-                <div class="jumbotron">
-                    <div class="container">
-                        <div ng-controller="courseCtrl"> 
-                            <div id="teachercourses" >
-                                <h2>Cursos:</h2>
-                                <div ng-repeat="c in courses | filter:query | orderBy:'c.subject_name'" >
-                                    <div class="row">
-                                            <div class="col s8">
-                                                    <div class="collection">
-                                                            <div>
-                                                                    <a class="collection-item" ng-model='id' ui-sref="dashboard.courseview({course : c.nrc})">
-                                                                            <span class="card-title">{{c.subject_name}}</span>
-                                                                                    <div id="nrc">{{c.nrc}}</div>	
-                                                                    </a>
-                                                            </div>
-                                        <a class="btn-floating waves-effect waves-light green" ui-sref="dashboard.studentlist({course : c.nrc})"><i class="fa fa-check"></i></a>
-                                                    </div>
-
-                                            </div>
-                                            <div class="col s4 ">
-                                                    <div><span></span></div>
-                                            </div>
-
-
-                                    </div>
+<div class="container home">
+    <div class="row">
+        <div class="col s12 m9 offset-m1 l8 offset-l1">
+            <div ng-controller="courseCtrl"> 
+                <div id="teachercourses" >
+                    <h2>Cursos</h2>
+                    <div ng-repeat="c in courses" >
+                        <div class="collection">	
+                            <div class="collection collection-item avatar">
+                                <div class="col s12 m8 l8 left collectiondiv">
+                                    <a ng-model="id" ui-sref="dashboard.courseview({course : c.nrc})">
+                                        <i class="material-icons circle red">assignment</i>
+                                        <span class="title">{{c.subject_name}}</span>
+                                        <p><b>NRC:</b> {{c.nrc}}</p>
+                                    </a>
                                 </div>
+                                <div class="col s12 m4 l4 right asistenciadiv">
+                                    <a class="fontgreen" ui-sref="dashboard.studentlist({course : c.nrc})"><i class="material-icons left">list</i>Tomar asistencia</a>
+                                </div>    
                             </div>
                         </div>
                     </div>
@@ -38,4 +25,5 @@
         </div>
     </div>
 </div>
+
 
