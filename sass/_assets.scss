@@ -26,3 +26,15 @@ body{
     font-weight: lighter;
     background-color: $background;
 }
+
+.fontblue{
+    color: $font_blue !important;
+}
+
+.fontgreen{
+    color: $secondary !important;
+}
+
+.backgroundgreen{
+    background-color: $secondary;
+}

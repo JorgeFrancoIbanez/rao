@@ -1,0 +1,46 @@
+.courseview{
+    .btn:hover{
+        background-color: $secondary;
+    }
+    
+    /* label color */
+    .input-field label {
+      color: $secondary;
+    }
+    
+    /* label underline focus color */
+    .input-field input[type=text]:focus {
+      border-bottom: 1px solid $secondary;
+    }
+    
+    @media (max-width:459px) {
+        .card{
+            margin: 15px 0; 
+        }
+        
+        .container{
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 460px) and (max-width : 767px){
+        .card{
+            padding-left: 15px;
+            margin: 15px 0;   
+        }
+    }
+
+    @media (min-width :768px) and (max-width : 992px) {
+        .card{
+            padding-left: 25px;
+            margin: 35px 0;   
+        }
+    }
+
+    @media (min-width:993px) {
+        .card{
+            padding-left: 25px;
+            margin: 45px 0;   
+        }
+    }
+}

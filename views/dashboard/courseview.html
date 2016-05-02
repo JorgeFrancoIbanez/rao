@@ -1,81 +1,50 @@
-<div>
-	<div class="jumbotron">
-		<div class="container">
-			<div > 
-				<div class="row">
-					<div class="col-lg-12">
-						 <div id="coursestudents" >
-                            <a ui-sref="home"><i class="fa fa-arrow-circle-left  fa-2x"></i></a>
-
- <div class="card">
-
-                                        <div class="card-content">
-                            <div class="container" ng-controller="courseViewCtrl">
-                                <div class="row">
-                                    
-                                    <div class="s12 col">
-                                        <h3>{{subject}} {{nrc}}</h3>
-                                        <h5>Lista de estudiantes</h5>
-                                        <br>
-                                        <form class="forms forms-inline input-field ">
-                                            <input type="text" class="input-big width-50" id="query" ng-model="query">
-                                            <label for="query">Buscar</label>
-                                        </form>
-                                        
-                                        <ul class="collection">
-                                                <li class="collection-item avatar animated fadeInUp" style="-webkit-animation-duration:{{$index * 300}}ms" ng-repeat="s in students | filter:query | orderBy:'s.name'">
-                                                    <div  class="modal-trigger title" >
-                                                        <a ui-sref="dashboard.studentprofile({course:nrc,user:s.id})" class="modal-close">
-                                                            <h4>{{s.names}} {{s.lastnames}}</h4>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                        </ul>
-                                          
-                                    </div>
-                                </div>
-                                <div id="modalDetails" class="modal bottom-sheet">
-                                    <div class="modal-content">
-                                        <div class="row">
-                                            <div class="l10">
-                                                <a ui-sref="dashboard.studentprofile({course:nrc,user:userid.id})" class="modal-close"><h3 >{{userid.names}}{{userid.lastnames}}</h3></a>
-                                                <hr>
-                                                <label>ID</label> {{userid.id}}                                                 <br/>
-                                                <label>Email</label> {{userid.email}}                                                 <br/>
-                                                <label>Programa</label> {{userid.program}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="modalStatistics" class="modal ">
-                                    <div class="modal-content">
-                                                    <h3>Estadisticas del curso</h3>                                                    
-                                                    <div id="container"></div>
-                                        
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="" class="modal-action modal-close waves-effect waves-green btn-flat "></a>
-                                    </div>
-                                </div>
-
-                                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                                <a class="btn-floating btn-large red">
-                                  <i class="fa fa-bars"></i>
+<div class="container courseview" ng-controller="courseViewCtrl">
+    <!--<a ui-sref="home"><i class="fa fa-arrow-circle-left  fa-2x"></i></a>-->
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h4 class="fontblue">{{subject}} {{nrc}}</h4>
+                <h6>Lista de estudiantes</h6>
+                <br>
+                <div class="row">
+                    <div class="col s9"> 
+                        <form class="forms forms-inline input-field ">
+                            <input type="text" class="input-big width-50" id="query" ng-model="query">
+                            <label for="query">Buscar</label>
+                        </form>
+                    </div>
+                    <div class="col s3">
+                        <button class="btn waves-effect waves-light backgroundgreen" type="submit" ng-click="login(user)" style="vertical-align: middle;">Tomar asistencia</button>
+                    </div>
+                </div>
+                <div ng-repeat="s in students | filter:query | orderBy:'s.name'">
+                    <div class="collection">	
+                        <div class="collection collection-item avatar">
+                            <div class="col s12 m8 l8 left collectiondiv">
+                                <a ng-model="id" ui-sref="dashboard.courseview({course : c.nrc})">
+                                    <i class="material-icons circle red">perm_identity</i>
+                                    <p>{{s.names}} {{s.lastnames}}</p>
+                                    <p class="black-text">{{s.id}}</p>
+                                    <p class="black-text">{{s.email}}</p>
                                 </a>
-                                <ul>
-                                  <li><a href="" ng-click="modalStatistics()" class="modal-trigger btn-floating waves-effect waves-light red"><i class="fa fa-line-chart"></i></a></li>
-                                  <li><a class="btn-floating waves-effect waves-light yellow darken-1"><i class="fa fa-check"></i></a></li>
-                                  <li><a class="btn-floating waves-effect waves-light green"><i class="fa fa-line-chart"></i></a></li>
-                                  <li><a class="btn-floating waves-effect waves-light blue"><i class="fa fa-line-chart"></i></a></li>
-                                </ul>
-                                </div>
                             </div>
-                                </div>
-                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+    </div>  
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="fa fa-bars"></i>
+        </a>
+        <ul>
+            <li><a href="" ng-click="modalStatistics()" class="modal-trigger btn-floating waves-effect waves-light red"><i class="fa fa-line-chart"></i></a></li>
+            <li><a class="btn-floating waves-effect waves-light yellow darken-1"><i class="fa fa-check"></i></a></li>
+            <li><a class="btn-floating waves-effect waves-light green"><i class="fa fa-line-chart"></i></a></li>
+            <li><a class="btn-floating waves-effect waves-light blue"><i class="fa fa-line-chart"></i></a></li>
+        </ul>
     </div>
 </div>

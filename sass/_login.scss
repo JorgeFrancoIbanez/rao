@@ -48,8 +48,10 @@ and open the template in the editor.
         margin-top: 10px;
     }
 
-    .btn, .btn:hover{
+    .btn{
         text-transform: none;
+    }
+    .btn:hover{
         background-color: $secondary;
     }
     /*****Form*******/

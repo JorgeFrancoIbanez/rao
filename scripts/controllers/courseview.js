@@ -9,16 +9,16 @@ controller('courseViewCtrl', function ($scope, $location,   $stateParams,coursev
             courseviewService.teachercourseview($scope.course);
             $state.go('dashboard.courseview',{course:$scope.course})
             courseviewService.getattendance($scope.course);
-
+            
 
         }
         else{
             courseviewService.studentcourseview($scope.course);    
             $state.go('studentcourseview',{course:$scope.course})
             courseviewService.studentstatistics($scope.user,$scope.course);
-
+            
         }
-
+        
         $scope.modalStatistics = function(){
             $('#modalStatistics').openModal();
         };

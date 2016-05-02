@@ -8103,6 +8103,18 @@ body {
   background-color: #EFEFEF;
 }
 
+.fontblue {
+  color: #039BE5 !important;
+}
+
+.fontgreen {
+  color: #0E7049 !important;
+}
+
+.backgroundgreen {
+  background-color: #0E7049;
+}
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -8150,8 +8162,11 @@ and open the template in the editor.
   margin-top: 10px;
 }
 
-#login-page .btn, #login-page .btn-large, #login-page .btn:hover, #login-page .btn-large:hover {
+#login-page .btn, #login-page .btn-large {
   text-transform: none;
+}
+
+#login-page .btn:hover, #login-page .btn-large:hover {
   background-color: #0E7049;
 }
 
@@ -8358,14 +8373,6 @@ and open the template in the editor.
   }
 }
 
-.home .fontblue {
-  color: #039BE5 !important;
-}
-
-.home .fontgreen {
-  color: #0E7049 !important;
-}
-
 .home .collectiondiv {
   margin: 5px 0;
 }
@@ -8394,6 +8401,53 @@ and open the template in the editor.
 @media (min-width: 993px) {
   .home .asistenciadiv a {
     font-size: 1.3rem;
+  }
+}
+
+.courseview {
+  /* label color */
+  /* label underline focus color */
+}
+
+.courseview .btn:hover, .courseview .btn-large:hover {
+  background-color: #0E7049;
+}
+
+.courseview .input-field label {
+  color: #0E7049;
+}
+
+.courseview .input-field input[type=text]:focus {
+  border-bottom: 1px solid #0E7049;
+}
+
+@media (max-width: 459px) {
+  .courseview .card {
+    margin: 15px 0;
+  }
+  .courseview .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 460px) and (max-width: 767px) {
+  .courseview .card {
+    padding-left: 15px;
+    margin: 15px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .courseview .card {
+    padding-left: 25px;
+    margin: 35px 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .courseview .card {
+    padding-left: 25px;
+    margin: 45px 0;
   }
 }
 
