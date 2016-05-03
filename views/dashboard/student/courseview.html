@@ -1,13 +1,15 @@
 
-<div class="container courseview" ng-controller="courseViewCtrl">
-    <!--<a ui-sref="studenthome"><i class="fa fa-arrow-circle-left  fa-2x"></i></a>-->
+<div class="container listview" ng-controller="courseViewCtrl">
     <div class="container">
         <div class="card">
             <div class="card-content">
                 <div class="s12 col">
-                    <h4 class="fontblue">{{subject}}</h4>
+                    <div class="pagetitle">
+                        <a onclick="window.history.back();" class="left"><i class="fa fa-arrow-circle-left fa-2x"></i> </a> 
+                        <h4 class="fontblue">{{subject}}</h4>
+                    </div>
                     <h5 class="fontblue"><b>NRC:</b> {{course}}</h5>
-                    <h5>Porcentages de asistencias  al curso</h5>
+                    <h5>Porcentajes de asistencias al curso</h5>
                     <br>
 
                 </div>

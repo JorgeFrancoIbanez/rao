@@ -19,7 +19,7 @@ $black: #262626; //Black
 $dark_primary: #C1C1C1; //Dark grey
 $secondary: #0E7049; //Green 
 $background: #EFEFEF; //Light grey
-$font_blue : #039BE5; 
+$blue : #039BE5; 
 
 body{
     font-family: 'champagne Limousines';
@@ -28,7 +28,7 @@ body{
 }
 
 .fontblue{
-    color: $font_blue !important;
+    color: $blue !important;
 }
 
 .fontgreen{

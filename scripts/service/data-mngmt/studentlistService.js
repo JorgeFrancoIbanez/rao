@@ -57,7 +57,7 @@ raoweb.factory('studentlistService',function($http,$rootScope,$location,sessionS
 
                 var request = $http({
                         method: "post",
-                        url: 'http://raoapi.utbvirtual.edu.co:8082/attendance',
+                        url: 'http://raoapi.utbvirtual.edu.co:8082/attendance?username='+ sessionStorage.getItem('user')+'&token='+sessionStorage.getItem('token'),
                         data: sendPost
                     });
                 var msgtxt='Asistencia realizada';

@@ -8404,50 +8404,82 @@ and open the template in the editor.
   }
 }
 
-.courseview {
+.listview {
   /* label color */
   /* label underline focus color */
 }
 
-.courseview .btn:hover, .courseview .btn-large:hover {
+.listview .btn:hover, .listview .btn-large:hover {
   background-color: #0E7049;
 }
 
-.courseview .input-field label {
+.listview .input-field label {
   color: #0E7049;
 }
 
-.courseview .input-field input[type=text]:focus {
+.listview .input-field input[type=text]:focus {
   border-bottom: 1px solid #0E7049;
 }
 
+.listview .pagetitle a {
+  margin-right: 10px;
+}
+
+.listview [type="checkbox"].filled-in:checked + label:after {
+  background-color: #039BE5;
+  border: 3px solid #039BE5;
+}
+
+.listview .collection .collection-item.avatar i.circle {
+  font-size: 28px;
+}
+
 @media (max-width: 459px) {
-  .courseview .card {
+  .listview .card {
     margin: 15px 0;
   }
-  .courseview .container {
+  .listview .container {
     width: 100%;
   }
 }
 
 @media (min-width: 460px) and (max-width: 767px) {
-  .courseview .card {
+  .listview .card {
     padding-left: 15px;
     margin: 15px 0;
+  }
+  .listview .container {
+    width: 100%;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .courseview .card {
+  .listview .card {
     padding-left: 25px;
     margin: 35px 0;
   }
+  .listview .container {
+    width: 100%;
+  }
 }
 
-@media (min-width: 993px) {
-  .courseview .card {
+@media (min-width: 993px) and (max-width: 1200px) {
+  .listview .card {
     padding-left: 25px;
     margin: 45px 0;
+  }
+  .listview .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1201px) {
+  .listview .card {
+    padding-left: 25px;
+    margin: 45px 0;
+  }
+  .listview .container {
+    width: 80%;
   }
 }
 

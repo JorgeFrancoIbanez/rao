@@ -9,13 +9,13 @@
                             <div class="collection collection-item avatar">
                                 <div class="col s12 m8 l8 left collectiondiv">
                                     <a ng-model="id" ui-sref="dashboard.courseview({course : c.nrc})">
-                                        <i class="material-icons circle red">assignment</i>
+                                        <i class="fa fa-users circle red"></i>
                                         <span class="title">{{c.subject_name}}</span>
                                         <p><b>NRC:</b> {{c.nrc}}</p>
                                     </a>
                                 </div>
                                 <div class="col s12 m4 l4 right asistenciadiv">
-                                    <a class="fontgreen" ui-sref="dashboard.studentlist({course : c.nrc})"><i class="material-icons left">list</i>Tomar asistencia</a>
+                                    <a class="fontgreen" ui-sref="dashboard.studentlist({course : c.nrc})"><i class="fa fa-bars left"></i>Tomar asistencia</a>
                                 </div>    
                             </div>
                         </div>

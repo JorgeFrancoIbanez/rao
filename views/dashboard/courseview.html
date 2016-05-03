@@ -1,28 +1,33 @@
-<div class="container courseview" ng-controller="courseViewCtrl">
-    <!--<a ui-sref="home"><i class="fa fa-arrow-circle-left  fa-2x"></i></a>-->
+<div class="container listview" ng-controller="courseViewCtrl">
     <div class="container">
         <div class="card">
             <div class="card-content">
-                <h4 class="fontblue">{{subject}} {{nrc}}</h4>
+                <div class="pagetitle">
+                    <a ui-sref="home" class="left"><i class="fa fa-arrow-circle-left fa-2x"></i> </a> 
+                    <h4 class="fontblue">{{subject}} {{nrc}}</h4>
+                </div>
                 <h6>Lista de estudiantes</h6>
                 <br>
                 <div class="row">
-                    <div class="col s9"> 
-                        <form class="forms forms-inline input-field ">
+                    <div class="col s12 m6 l6"> 
+                        <form class="forms forms-inline input-field">
                             <input type="text" class="input-big width-50" id="query" ng-model="query">
                             <label for="query">Buscar</label>
                         </form>
                     </div>
-                    <div class="col s3">
-                        <button class="btn waves-effect waves-light backgroundgreen" type="submit" ng-click="login(user)" style="vertical-align: middle;">Tomar asistencia</button>
+                    <div class="col s6 m3 l3">
+                        <a class="btn waves-effect waves-light backgroundgreen" ui-sref="dashboard.studentlist({course : nrc})"><i class="fa fa-check"></i> Asistencia</a>
+                    </div>
+                    <div class="col s6 m3 l3">
+                        <a href="" ng-click="modalStatistics()" class="btn waves-effect waves-light red"><i class="fa fa-bar-chart"></i> Estadísticas</a>
                     </div>
                 </div>
-                <div ng-repeat="s in students | filter:query | orderBy:'s.name'">
+                <div ng-repeat="s in students| filter:query | orderBy:'s.name'">
                     <div class="collection">	
                         <div class="collection collection-item avatar">
                             <div class="col s12 m8 l8 left collectiondiv">
-                                <a ng-model="id" ui-sref="dashboard.courseview({course : c.nrc})">
-                                    <i class="material-icons circle red">perm_identity</i>
+                                <a ng-model="id" ui-sref="dashboard.studentprofile({user: s.id, course : c.nrc})">
+                                    <i class="fa fa-user circle red"></i>
                                     <p>{{s.names}} {{s.lastnames}}</p>
                                     <p class="black-text">{{s.id}}</p>
                                     <p class="black-text">{{s.email}}</p>
@@ -36,15 +41,23 @@
         </div>
     </div>  
 
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-        <a class="btn-floating btn-large red">
-            <i class="fa fa-bars"></i>
-        </a>
+    <!--<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red"><i class="fa fa-bars"></i></a>
         <ul>
-            <li><a href="" ng-click="modalStatistics()" class="modal-trigger btn-floating waves-effect waves-light red"><i class="fa fa-line-chart"></i></a></li>
+            <li><a href="" ng-click="modalStatistics()" class="modal-trigger btn-floating waves-effect waves-light red"><i class="fa fa-bar-chart"></i></a></li>
             <li><a class="btn-floating waves-effect waves-light yellow darken-1"><i class="fa fa-check"></i></a></li>
             <li><a class="btn-floating waves-effect waves-light green"><i class="fa fa-line-chart"></i></a></li>
-            <li><a class="btn-floating waves-effect waves-light blue"><i class="fa fa-line-chart"></i></a></li>
         </ul>
+    </div>-->
+
+    <div id="modalStatistics" class="modal">
+        <div class="modal-content">
+            <h3>Estadisticas del curso</h3>                                                    
+            <div id="container"></div>
+
+        </div>
+        <div class="modal-footer">
+            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat "></a>
+        </div>
     </div>
 </div>
