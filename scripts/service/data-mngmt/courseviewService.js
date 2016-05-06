@@ -1,4 +1,4 @@
-raoweb.factory('courseviewService',function($http,$rootScope){
+raoweb.factory('courseviewService',function($http,$rootScope,$location){
     
     return{
         teachercourseview:function(course){
@@ -9,6 +9,9 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                 //params: {username: "T00010915", token:"SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF"}
                 }).success(function (response) {
                 console.log(response)
+                var msg  = "El curso con NRC "+course+" no existe"
+                if (response != msg )
+                {
                     $rootScope.json = response;
                     $rootScope.nrc = $rootScope.json.nrc;
                     $rootScope.subject = $rootScope.json.subject;
@@ -16,6 +19,12 @@ raoweb.factory('courseviewService',function($http,$rootScope){
                     $rootScope.names = $rootScope.json.students.names;
                     $rootScope.lastnames = $rootScope.json.students.lastnames;
                     $rootScope.estudentID = $rootScope.json.students.id;
+                }
+                else{
+                     var msgtxt = 'Verifique el nrc del curso';
+                    Materialize.toast(msgtxt, 5000, 'rounded');
+                    $location.path("/dashboard/teacher/homeerror"); 
+                }
             }).catch(function(msg){console.log("mensaje", msg)});
             
        },

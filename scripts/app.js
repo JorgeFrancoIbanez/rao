@@ -61,7 +61,14 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'views/dashboard/home.html',
                 controller: 'courseCtrl'
             })
-
+            .state('dashboard.homeerrors', {
+                url: '/teacher/homeerror',
+                templateUrl: 'views/dashboard/error/nocourse.html',
+            }) 
+            .state('dashboard.studenterrors', {
+                url: '/teacher/studenterror',
+                templateUrl: 'views/dashboard/error/nostudent.html',
+            })
             .state('dashboard.courselist', {
                 url: '/teacher/courselist',
                 templateUrl: 'views/dashboard/courselist.html',

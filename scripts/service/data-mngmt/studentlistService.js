@@ -6,7 +6,9 @@ raoweb.factory('studentlistService',function($http,$rootScope,$location,sessionS
             url: "http://raoapi.utbvirtual.edu.co:8082/course/"+    course +"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
             method: "GET",
             }).success(function (response){
-                
+                var msg  = "El curso con NRC "+course+" no existe"
+                if (response != msg )
+                {
                 console.log(response);
                 $rootScope.json = response;
                 $rootScope.nrc = $rootScope.json.nrc;
@@ -24,6 +26,12 @@ raoweb.factory('studentlistService',function($http,$rootScope,$location,sessionS
                 //fill with 0's attendance array
                 for (var i =0; i<size; i++){
                     $rootScope.attendance.push({id:$rootScope.students[i].id, attendance: 0});
+                }
+                }
+                else{
+                     var msgtxt = 'Verifique el nrc del curso';
+                    Materialize.toast(msgtxt, 5000, 'rounded');
+                    $location.path("/dashboard/teacher/homeerror"); 
                 }
             });
         },
