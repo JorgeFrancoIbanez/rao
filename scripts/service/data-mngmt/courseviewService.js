@@ -4,11 +4,10 @@ raoweb.factory('courseviewService',function($http,$rootScope,$location){
         teachercourseview:function(course){
             $http({
                 //http://raoapi.utbvirtual.edu.co:8082
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+123+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
                 //params: {username: "T00010915", token:"SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF"}
                 }).success(function (response) {
-                console.log(response)
                 var msg  = "El curso con NRC "+course+" no existe"
                 if (response != msg )
                 {
@@ -25,21 +24,19 @@ raoweb.factory('courseviewService',function($http,$rootScope,$location){
                     Materialize.toast(msgtxt, 5000, 'rounded');
                     $location.path("/dashboard/teacher/homeerror"); 
                 }
-            }).catch(function(msg){console.log("mensaje", msg)});
+            }).catch(function(msg){console.log("mensaje", msg)});//hacer algo aqui
             
        },
         studentcourseview:function(course){
              $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+123+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
-                //params: {username: "T00010915", token:"SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF"}
                 }).success(function (response) {
                     $rootScope.courses = response;
-                 console.log($rootScope.courses)
                     $rootScope.nrc = $rootScope.courses.nrc;
                     $rootScope.subject = $rootScope.courses.subject;
                     $rootScope.students = $rootScope.courses.students;
-            }).catch(function(msg){console.log("mensaje", msg)});
+            }).catch(function(msg){console.log("mensaje", msg)}); //hacer algo aqui
         },
         getattendance:function(course){
             $rootScope.students_names = new Array();
@@ -54,7 +51,7 @@ raoweb.factory('courseviewService',function($http,$rootScope,$location){
                 console.log("response",response)
                 response = response["students"];   
                 for (i = 0; i < response.length; i++){
-                    $rootScope.students_names.push(response[i]["student_name"]+ " "+response[i]["student_lastname"]); //NOMBRE DEL ESTUDIANTE
+                    $rootScope.students_names.push(response[i]["student_name"]+ " "+response[i]["student_lastname"]); 
                 }
                 for (i = 0 ; i < 5; i++){                
                     for( j = 0; j < response.length; j++){
@@ -64,12 +61,10 @@ raoweb.factory('courseviewService',function($http,$rootScope,$location){
                                 break;
                             case 1:
                                 $rootScope.didnotcome.push(response[j]["attendance_percent"][1].value);
-                                //$rootScope.didnotcome.push(response[j]["attendance"]["percent"][1].value);
                                 break;
                         }                    
                     }
                 }
-console.log("came", $rootScope.came);
 
                 $(function () { 
                     $('#container').highcharts({ 
@@ -177,14 +172,10 @@ console.log("came", $rootScope.came);
             method: "GET",
             }).success(function (response) {
                 $rootScope.att = response.attendance;
-                                console.log("esta",response)   
-
                 $rootScope.come = $rootScope.att.percent[0].value;
                 $rootScope.notcome = $rootScope.att.percent[1].value;  
-                console.log($rootScope.come)
                 $rootScope.comenum = $rootScope.att.value[0].value;
                 $rootScope.notcomenum = $rootScope.att.value[1].value;  
-                console.log($rootScope.comenum)
                  for (i = 0; i < $rootScope.att.length; i++){
                     $rootScope.array.push([$rootScope.att.key, $rootScope.att.value]);
                 } 

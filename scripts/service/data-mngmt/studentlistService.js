@@ -64,13 +64,20 @@ raoweb.factory('studentlistService',function($http,$rootScope,$location,sessionS
                 console.log(sendPost);
 
                 var request = $http({
-                        method: "post",
-                        url: 'http://raoapi.utbvirtual.edu.co:8082/attendance?username='+ sessionStorage.getItem('user')+'&token='+sessionStorage.getItem('token'),
-                        data: sendPost
-                    });
-                var msgtxt='Asistencia realizada';
-				Materialize.toast(msgtxt, 5000,'rounded');
-                $location.path("/teacher/home");
+                            method: "post",
+                            url: 'http://raoapi.utbvirtual.edu.co:8082/attendance?username='+ sessionStorage.getItem('user')+'&token='+sessionStorage.getItem('token'),
+                            data: sendPost
+                            }).success(function(response){
+
+                                var msgtxt='Asistencia realizada';
+                                Materialize.toast(msgtxt, 5000,'rounded');
+                                $location.path("/teacher/home");  
+                            }).catch(function(msg){
+                                console.log(msg);
+                                var msgtxt='Asistencia no realizada';
+                                Materialize.toast(msgtxt, 5000,'rounded');
+                                $location.path("/teacher/home");  
+                            });
             };
         }
     }

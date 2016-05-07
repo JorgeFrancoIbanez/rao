@@ -13,8 +13,6 @@ var raoweb = angular.module('raoweb', ['ui.router', 'ngAnimate']);
 raoweb.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when('/teacher/home', '/dashboard/teacher/home');
     $urlRouterProvider.when('/student/home', '/dashboard/student/home');
-    //$urlRouterProvider.when('/dashboard/teacher/studentprofile/:user/:course', '/dashboard/teacher/studentprofile');
-    //$urlRouterProvider.when('/logout', '/login');
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
@@ -28,49 +26,34 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'views/dashboard.html',
                 controller: 'DashboardCtrl'
             })
-            .state('dashboard.courseview', {
+            .state('courseview', {
                 url: '/teacher/courseview/:course',
+                parent:'dashboard',
                 templateUrl: 'views/dashboard/courseview.html',
                 controller: 'courseViewCtrl'
             })
-            .state('dashboard.studentlist', {
+            .state('studentlist', {
                 url: '/teacher/studentlist?course',
+                parent:'dashboard',
                 templateUrl: 'views/dashboard/studentlist.html',
                 controller: 'studentsByCourseCtrl'
 
             })
-            .state('dashboard.studentprofile', {
+            .state('studentprofile', {
                 url: '/teacher/studentprofile/:user/course/:course',
+                parent:'dashboard',
                 templateUrl: 'views/dashboard/student/profile.html',
                 controller: 'studentProfile'
             })
-//        .state('profile', {
-//			url: '/teacher/profile',
-//			parent: 'dashboard',
-//			templateUrl: 'views/dashboard/profile.html',
-//			controller: 'teacherCtrl'
-//		})s
-            /*.state('dashboard.courseview.coursestatistics', {
-             url: '/coursestatistics?course',
-             templateUrl: 'views/dashboard/courseStatistics.html',
-             controller: 'courseStatisticsCtlr'
-             })*/
             .state('home', {
                 url: '/teacher/home',
                 parent: 'dashboard',
                 templateUrl: 'views/dashboard/home.html',
                 controller: 'courseCtrl'
             })
-            .state('dashboard.homeerrors', {
-                url: '/teacher/homeerror',
-                templateUrl: 'views/dashboard/error/nocourse.html',
-            }) 
-            .state('dashboard.studenterrors', {
-                url: '/teacher/studenterror',
-                templateUrl: 'views/dashboard/error/nostudent.html',
-            })
-            .state('dashboard.courselist', {
+            .state('courselist', {
                 url: '/teacher/courselist',
+                parent:'dashboard',
                 templateUrl: 'views/dashboard/courselist.html',
                 controller: 'courseCtrl'
             })
@@ -98,21 +81,29 @@ raoweb.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'views/login.html',
                 controller: 'logoutctrl'
             })
-            .state('errornoteacher', {
-                url: '/reports',
-                parent: 'dashboard',
-                templateUrl: 'views/dashboard/reports.html'
-            })
-            .state('errornostudent', {
-                url: '/reports',
-                parent: 'dashboard',
-                templateUrl: 'views/dashboard/reports.html'
-            })
-            .state('reports', {
-                url: '/reports',
-                parent: 'dashboard',
-                templateUrl: 'views/dashboard/reports.html'
-            });
+//            .state('errornoteacher', {
+//                url: '/reports',
+//                parent: 'dashboard',
+//                templateUrl: 'views/dashboard/reports.html'
+//            })
+//            .state('errornostudent', {
+//                url: '/reports',
+//                parent: 'dashboard',
+//                templateUrl: 'views/dashboard/reports.html'
+//            })
+//            .state('dashboard.homeerrors', {
+//                url: '/teacher/homeerror',
+//                templateUrl: 'views/dashboard/error/nocourse.html',
+//            }) 
+//            .state('dashboard.studenterrors', {
+//                url: '/teacher/studenterror',
+//                templateUrl: 'views/dashboard/error/nostudent.html',
+//            })
+//            .state('reports', {
+//                url: '/reports',
+//                parent: 'dashboard',
+//                templateUrl: 'views/dashboard/reports.html'
+//            });
 
 });
 

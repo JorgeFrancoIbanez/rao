@@ -16,7 +16,7 @@
                         </form>
                     </div>
                     <div class="col s6 m3 l3">
-                        <a class="btn waves-effect waves-light backgroundgreen" ui-sref="dashboard.studentlist({course : nrc})"><i class="fa fa-check"></i> Asistencia</a>
+                        <a class="btn waves-effect waves-light backgroundgreen" ui-sref="studentlist({course : nrc})"><i class="fa fa-check"></i> Asistencia</a>
                     </div>
                     <div class="col s6 m3 l3">
                         <a href="" ng-click="modalStatistics()" class="btn waves-effect waves-light red"><i class="fa fa-bar-chart"></i> Estadísticas</a>
@@ -26,7 +26,7 @@
                     <div class="collection">	
                         <div class="collection collection-item avatar">
                             <div class="col s12 m8 l8 left collectiondiv">
-                                <a ng-model="id" ui-sref="dashboard.studentprofile({user: s.id, course : c.nrc})">
+                                <a ng-model="id" ui-sref="studentprofile({user: s.id, course: nrc})">
                                     <i class="fa fa-user circle red"></i>
                                     <p>{{s.names}} {{s.lastnames}}</p>
                                     <p class="black-text">{{s.id}}</p>
@@ -51,13 +51,16 @@
     </div>-->
 
     <div id="modalStatistics" class="modal">
-        <div class="modal-content">
-            <h3>Estadisticas del curso</h3>                                                    
-            <div id="container"></div>
+            <div class="row">
+                <div class="col s12">
+                    <h3 class="center">Estadisticas del curso</h3>
+                </div>
+                <div class="col s10 push-s1 pull-s1 span6">
+                    <div class="center" id="container" style="width=100%"></div>
+                </div>
+                
+            </div>
 
-        </div>
-        <div class="modal-footer">
-            <a href="" class="modal-action modal-close waves-effect waves-green btn-flat "></a>
-        </div>
+        
     </div>
 </div>
