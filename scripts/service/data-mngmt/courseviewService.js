@@ -4,7 +4,7 @@ raoweb.factory('courseviewService',function($http,$rootScope,$location){
         teachercourseview:function(course){
             $http({
                 //http://raoapi.utbvirtual.edu.co:8082
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+123+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
                 //params: {username: "T00010915", token:"SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF"}
                 }).success(function (response) {
@@ -29,7 +29,7 @@ raoweb.factory('courseviewService',function($http,$rootScope,$location){
        },
         studentcourseview:function(course){
              $http({
-                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+123+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
+                url: "http://raoapi.utbvirtual.edu.co:8082/course/"+course+"/students?username="+ sessionStorage.getItem('user')+"&token="+sessionStorage.getItem('token'), 
                 method: "GET",
                 }).success(function (response) {
                     $rootScope.courses = response;

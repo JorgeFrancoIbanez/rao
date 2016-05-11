@@ -5,7 +5,7 @@ raoweb.factory('loginService', function ($http, $location, sessionService) {
     var sesionType; //save key value for sessions
     return{
         login: function (data, scope) {
-            var $promise = $http.post('http://raoapi.utbvirtual.edu.co:8082/token', { username: data.username, password: data.password}).then(function (msg) {
+            var $promise = $http.post('http://raoapi.utbvirtual.edu.co:8082/token?username='+ data.username+'&password='+ data.password).then(function (msg) {
                 var user_id = msg.data.token;
                 var user_type = msg.data.type;
                 if (user_id) {
@@ -27,10 +27,13 @@ raoweb.factory('loginService', function ($http, $location, sessionService) {
                         $location.path('/dashboard/teacher/home');
                     }
                 }
-            }).catch(function () {
+            }).catch(function (mes) {
+                console.log(mes)
                 scope.msgtxt = 'Datos incorrectos, intentelo nuevamente.';
                 Materialize.toast(scope.msgtxt, 5000, 'rounded');
             });
+                            console.log("asdasdasd")
+
             /* sessionService.set('user','t00010915');
              sessionService.set('token','SGRh6AoMQMUB1GuIVbulDHym3gORp91wB9EyoNmF');
              sessionService.set('type','teacher');*/
