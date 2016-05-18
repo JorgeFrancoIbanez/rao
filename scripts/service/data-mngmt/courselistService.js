@@ -39,4 +39,3 @@ raoweb.factory('courselistService',function($http,$rootScope,$location){
         }
     }
 });
-
