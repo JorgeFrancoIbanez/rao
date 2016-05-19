@@ -40,9 +40,17 @@ raoweb.factory('loginService', function ($http, $location, sessionService) {
         },
         logout: function () {
             console.log("entro");
+            $http.post('http://raoapi.utbvirtual.edu.co:8082/tokenlogout?username='+             sessionService.get('user')+'&token='+ sessionService.get('token')).then(function (msg) {
+                console.log(msg);
+                console.log("salio");
+                
             sessionService.destroy('user');
             sessionService.destroy('token');
             sessionService.destroy('type');
+                
+            }).catch(function(error){
+                console.log("error", error);
+            })
             
             /*
              *  sessionStorage.removeItem('user');
